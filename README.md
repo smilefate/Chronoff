@@ -20,8 +20,8 @@
 ---
 
 ## 🌍 Language / Dil Selection
-* [English Version (İngilizce Sürüm)](#-english-version)
-* [Türkçe Sürüm (Turkish Version)](#-türkçe-sürüm)
+* [English Version](#-english-version)
+* [Türkçe Sürüm](#-türkçe-sürüm)
 
 ---
 
