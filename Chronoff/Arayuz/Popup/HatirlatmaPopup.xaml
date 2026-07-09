@@ -1,0 +1,120 @@
+<Window x:Class="Chronoff.HatirlatmaPopup"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chronoff"
+        mc:Ignorable="d"
+        Title="Chronoff - Bildirim" Height="450" Width="420"
+        WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen"
+        Background="Transparent" Topmost="True">
+
+    <Window.Resources>
+        <SolidColorBrush x:Key="BackgroundDark" Color="#1E1E1E"/>
+        <SolidColorBrush x:Key="SecondaryContainer" Color="#60CDFF"/>
+        <SolidColorBrush x:Key="TextMuted" Color="#A0A6AE"/>
+        <SolidColorBrush x:Key="BorderColor" Color="#22FFFFFF"/>
+
+        <Style x:Key="SnoozeButton" TargetType="Button">
+            <Setter Property="Background" Value="#0FFFFFFF"/>
+            <Setter Property="Foreground" Value="#60CDFF"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="#11FFFFFF"/>
+            <Setter Property="Padding" Value="10"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="6"/>
+                </Style>
+            </Style.Resources>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#1FFFFFFF"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="{StaticResource BackgroundDark}" CornerRadius="16" BorderThickness="1" BorderBrush="{StaticResource BorderColor}">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="20" Color="Black" Opacity="0.5" ShadowDepth="0"/>
+        </Border.Effect>
+        <Grid Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!-- Header -->
+            <Grid Grid.Row="0">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                    <TextBlock Text="⚡" Foreground="{StaticResource SecondaryContainer}" FontSize="18" VerticalAlignment="Center"/>
+                    <TextBlock Text="Chronoff" Foreground="White" FontSize="18" FontWeight="SemiBold" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                </StackPanel>
+                <Button Content="✕" HorizontalAlignment="Right" Background="Transparent" Foreground="{StaticResource TextMuted}" BorderThickness="0" FontSize="14" Cursor="Hand" Click="Iptal_Click"/>
+            </Grid>
+
+            <!-- Body -->
+            <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock x:Name="BaslikText" Text="Zamanlanmış Eylem Hatırlatıcısı" Foreground="White" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,5"/>
+                <TextBlock x:Name="KalanSureText" Text="Sistem 5 dakika içinde yeniden başlatılacak." TextWrapping="Wrap" TextAlignment="Center" Foreground="{StaticResource TextMuted}" FontSize="13" HorizontalAlignment="Center" Margin="0,0,0,25"/>
+
+                <!-- Live Countdown -->
+                <TextBlock x:Name="CountdownDisplay" Text="05:00" Foreground="{StaticResource SecondaryContainer}" FontSize="48" FontWeight="Black" HorizontalAlignment="Center">
+                    <TextBlock.Effect>
+                        <DropShadowEffect BlurRadius="15" Color="#60CDFF" Opacity="0.4" ShadowDepth="0"/>
+                    </TextBlock.Effect>
+                </TextBlock>
+
+                <!-- Depleting Progress Bar -->
+                <Border Width="260" Height="6" Background="#1AFFFFFF" CornerRadius="3" Margin="0,15,0,25" HorizontalAlignment="Center">
+                    <ProgressBar x:Name="ProgressBarUyar" Minimum="0" Maximum="100" Value="100" Foreground="{StaticResource SecondaryContainer}" Background="Transparent" BorderThickness="0"/>
+                </Border>
+
+                <!-- Snooze options -->
+                <TextBlock x:Name="lblEylemiErtele" Text="EYLEMİ ERTELE" FontSize="10" FontWeight="Bold" Foreground="{StaticResource TextMuted}" HorizontalAlignment="Center" Margin="0,0,0,8"/>
+                <UniformGrid x:Name="ErtelemeSecim" Columns="5" Width="360">
+                    <Button Style="{StaticResource SnoozeButton}" Content="5dk" Tag="5" Click="Ertele_Click"/>
+                    <Button Style="{StaticResource SnoozeButton}" Content="10dk" Tag="10" Click="Ertele_Click"/>
+                    <Button Style="{StaticResource SnoozeButton}" Content="30dk" Tag="30" Click="Ertele_Click"/>
+                    <Button Style="{StaticResource SnoozeButton}" Content="1sa" Tag="60" Click="Ertele_Click"/>
+                    <Button Style="{StaticResource SnoozeButton}" Content="5sa" Tag="300" Click="Ertele_Click"/>
+                </UniformGrid>
+            </StackPanel>
+
+            <!-- Footer Buttons -->
+            <StackPanel Grid.Row="2" Margin="0,15,0,0">
+                <Grid Margin="0,0,0,10">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Grid.Column="0" x:Name="btnOnayla" Content="Onayla" Click="Onayla_Click" Margin="0,0,6,0" Height="40" Background="#0078D4" Foreground="White" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                    <Button Grid.Column="1" x:Name="btnKapat" Content="Kapat" Click="Iptal_Click" Margin="6,0,0,0" Height="40" Background="#33FFFFFF" Foreground="White" FontWeight="SemiBold" BorderThickness="0" Cursor="Hand">
+                        <Button.Resources>
+                            <Style TargetType="Border">
+                                <Setter Property="CornerRadius" Value="8"/>
+                            </Style>
+                        </Button.Resources>
+                    </Button>
+                </Grid>
+
+                <Button x:Name="btnIptalEt" Content="🛑 Eylemi İptal Et" Click="IptalEt_Click" Height="40" Background="#E81123" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Width="200" HorizontalAlignment="Center">
+                    <Button.Resources>
+                        <Style TargetType="Border">
+                            <Setter Property="CornerRadius" Value="8"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

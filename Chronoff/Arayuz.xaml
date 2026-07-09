@@ -1,0 +1,1214 @@
+<Window x:Class="Chronoff.Arayuz"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chronoff"
+        mc:Ignorable="d"
+        Title="Chronoff" 
+        Height="650" Width="950"
+        WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen"
+        Background="Transparent">
+
+    <Window.Resources>
+        <!-- App dynamic vector logo template -->
+        <ControlTemplate x:Key="AppLogoTemplate">
+            <Viewbox Stretch="Uniform">
+                <Canvas Width="660" Height="660">
+                    <Canvas.RenderTransform>
+                        <TranslateTransform X="-82" Y="-393"/>
+                    </Canvas.RenderTransform>
+                    <!-- Path 1 (Theme Colored Body) -->
+                    <Path Fill="{DynamicResource PrimaryBlue}" Stroke="{DynamicResource PrimaryBlue}" StrokeThickness="1" Data="M 276.4986 73.001465 L 737.501373 73.001465 L 738.499643 73.999961 L 749.499897 73.999961 L 766.499414 77.000276 L 787.501653 83.000904 L 819.499325 97.997651 C 835.500572 107.664257 849.664424 119.168677 862.000527 132.501263 C 875.735172 147.435302 887.068183 164.766698 895.99956 184.500275 L 904.000183 206.500971 L 909.001176 227.498346 L 909.999445 241.501419 L 910.997715 242.499916 L 910.997715 263.502115 L 912.000807 264.500611 L 912.000807 699.497917 L 910.997715 700.501238 L 909.999445 722.501933 L 906.999814 737.49868 L 895.00129 772.499129 C 884.333792 794.832656 870.497874 814.001866 853.498358 830.001933 C 840.834321 841.998366 826.501679 852.335461 810.500432 860.998747 L 781.502391 873.000003 L 755.499159 879.000631 L 729.50075 879.999128 L 728.497658 880.997625 L 531.500992 880.997625 L 529.49963 879.999128 L 528.501361 880.997625 L 519.497645 880.997625 L 515.499745 879.999128 L 514.501475 880.997625 L 506.500852 880.997625 L 504.49949 879.999128 C 503.501221 881.668113 501.167103 882.000945 497.501959 880.997625 L 493.499236 879.999128 L 491.497874 880.997625 L 489.501335 880.997625 L 487.499974 879.999128 L 485.498612 880.997625 L 484.500343 879.999128 L 473.500088 879.999128 L 464.501195 880.997625 L 462.499834 879.999128 L 458.501933 880.997625 L 456.500572 879.999128 L 455.502302 880.997625 L 442.500686 880.997625 L 441.497594 879.999128 L 425.50117 879.999128 L 424.498078 880.997625 L 322.500979 880.997625 L 319.501348 879.999128 L 318.498256 880.997625 L 292.499847 880.997625 L 291.501577 879.999128 L 271.497607 879.999128 L 270.499338 879.000631 L 255.501183 878.002135 L 230.501043 872.001506 L 214.499796 866.000878 C 187.898567 853.932091 165.734091 837.435187 148.001546 816.500519 C 137.001291 803.833599 127.664819 789.497693 120.001775 773.497625 L 109.99979 747.498119 L 104.998797 726.500744 L 104.000528 710.500677 L 103.002258 709.50218 L 103.002258 558.497626 L 101.999166 555.502136 L 103.002258 554.498815 L 103.002258 399.500274 L 101.999166 398.501777 L 103.002258 393.499646 L 101.999166 392.501149 L 101.999166 378.498076 L 103.002258 374.499265 L 101.999166 371.498951 L 103.002258 364.499826 L 101.999166 363.501329 L 101.999166 354.500387 L 103.002258 352.498569 L 101.999166 350.501576 L 103.002258 348.499758 C 101.531378 347.6315 101.198622 345.634507 101.999166 342.49913 L 101.999166 340.502137 L 103.002258 328.50088 L 101.999166 327.502384 L 101.999166 297.499243 L 103.002258 294.498929 L 101.999166 292.501935 L 103.002258 291.498615 L 103.002258 244.501733 L 104.000528 243.498413 L 104.000528 235.500791 L 107.998428 214.498592 L 112.999421 197.500028 C 124.399947 166.565922 141.235497 141.068076 163.501247 121.001666 C 179.102221 106.598229 197.432764 94.934629 218.497696 86.001218 L 247.500559 77.000276 L 264.500076 73.999961 L 275.50033 73.999961 Z M 489.998059 231.00032 L 488.999789 231.998817 L 480.000896 231.998817 L 472.000273 234.000634 L 466.001011 234.000634 L 444.000502 238.997942 L 410.001469 250.999198 C 385.999599 261.664302 365.002182 275.001711 346.999573 291.001778 C 320.335651 312.99765 299.333411 340.666141 283.997677 373.997605 L 268.999522 414.998681 L 263.99853 437.997874 L 263.00026 452.000947 L 262.001991 452.999444 L 262.001991 462.998883 L 260.998899 464.002204 L 260.998899 491.998703 L 262.001991 493.002024 L 262.001991 503.99996 L 263.99853 512.002405 L 263.99853 517.99821 L 268.001253 536.998591 L 277.998415 568.000229 C 289.331426 595.331064 304.001647 619.333577 321.999433 639.99812 C 345.330968 665.997626 374.001075 686.999824 408.000107 702.999892 L 441.000871 715.001148 L 457.002118 718.999959 L 474.001634 721.001776 L 474.999904 722.000273 L 482.002258 722.000273 L 483.000527 722.99877 L 496.002143 722.99877 L 497.000413 724.00209 L 530.999446 722.99877 L 549.002054 719.998456 L 545.997601 716.998142 C 537.331464 709.666184 529.66842 701.330907 522.998822 692.001956 L 514.998199 676.001889 L 513.999929 674.000071 L 488.00152 674.000071 L 486.998428 673.001574 L 472.998542 671.998254 L 436.998148 661.998815 C 414.332126 653.335529 394.998491 641.667105 379.002067 626.998366 C 360.999459 611.668787 346.001304 593.666903 333.997957 573.00236 C 327.333182 560.335439 321.666677 546.665198 316.998441 532.001283 L 312.002271 509.002091 L 310.999179 491.998703 L 310.000909 491.000207 L 310.000909 465.0007 L 310.999179 464.002204 L 312.002271 448.002136 L 316.000171 427.998434 L 321.999433 408.998053 C 332.001418 382.998547 345.668547 360.997851 363.00082 343.000791 C 380.998606 322.331424 403.664628 306.331357 430.998886 295.000589 L 461.000018 285.00115 L 482.002258 281.002339 L 489.998059 281.002339 L 491.001151 279.999018 L 525.000184 279.999018 L 525.998453 281.002339 L 533.999077 281.002339 L 541.001431 282.999332 L 545.997601 282.999332 L 564.998479 288.001464 C 592.332737 296.66475 616.001851 309.664503 636.000998 327.000723 C 653.333271 342.335126 667.998669 360.665019 680.002016 382.00005 L 695.000171 416.002002 L 700.001163 433.999063 L 701.997702 450.997627 L 703.000794 452.000947 L 703.000794 459.000072 L 703.999064 459.998569 L 703.999064 496.002338 C 701.997702 496.668003 701.664946 499.335484 703.000794 503.99996 L 720.000311 514.997896 C 730.002296 522.334677 737.998097 531.668451 744.002181 542.999219 L 745.99872 538.001912 L 750.001443 520.000027 L 751.997982 500.999646 L 753.001074 500.001149 L 753.001074 484.999578 L 753.999344 484.001082 L 753.001074 456.998255 L 751.997982 455.999758 L 750.999713 440.998188 L 744.002181 408.998053 L 739.999458 397.00162 C 728.666447 365.001486 712.6652 337.665827 692.00054 314.999467 C 668.669005 288.334296 639.998898 266.999265 605.999866 250.999198 L 572.000833 238.997942 L 550.000324 234.000634 L 527.999815 231.998817 L 527.001545 231.00032 Z M 503.997944 318.998278 L 497.000413 321.998592 C 492.99769 324.666074 490.335638 328.664885 488.999789 333.999848 L 488.999789 446.998816 L 485.001889 449.99913 C 478.332291 454.668429 474.001634 461.667554 472.000273 471.001329 L 472.000273 484.999578 C 473.331299 491.000207 475.665417 496.002338 478.997804 500.001149 C 484.331553 506.667442 491.99942 510.999085 502.001405 513.000902 L 513.999929 513.000902 L 527.999815 507.000274 L 536.000438 497.999332 L 538.0018 496.002338 L 614.998759 496.002338 L 619.999751 494.000521 C 624.667987 491.333039 627.667618 487.001396 628.998644 481.000768 L 628.998644 475.000139 L 625.999013 466.997694 L 617.00012 459.000072 L 588.00208 459.000072 L 586.000718 458.001575 L 583.999357 458.001575 L 578.998364 459.000072 L 575.998733 458.001575 C 571.33532 456.665423 568.668445 456.998255 567.99811 459.000072 L 564.998479 458.001575 L 558.000947 459.000072 L 555.001316 458.001575 L 552.999955 459.000072 L 539.000069 459.000072 L 536.000438 455.999758 L 527.999815 448.002136 L 525.998453 446.998816 L 525.998453 336.001666 L 521.002283 324.000409 L 511.998568 318.998278 Z M 666.00213 517.99821 L 672.001392 532.99978 L 675.999293 552.000162 L 675.999293 570.002046 L 675.001023 571.000543 L 673.997931 583.001799 L 670.000031 596.001552 C 665.331795 608.668473 658.66702 619.666409 650.000883 629.000184 C 634.665149 647.002068 613.00222 658.332836 584.997626 663.002135 L 563.00194 663.002135 C 561.666091 661.665983 559.331973 661.33315 555.999586 661.998815 L 536.998708 655.998187 C 540.331095 666.668114 545.332088 676.334721 552.001685 684.998007 C 561.998848 696.333599 574.002194 705.667374 588.00208 712.999331 L 605.999866 719.998456 L 619.999751 722.99877 L 628.998644 722.99877 L 630.001736 724.00209 L 655.001876 722.000273 L 672.001392 716.998142 C 683.334403 712.333666 693.331566 706.333038 701.997702 699.001081 C 711.999687 690.332971 720.333067 680.000699 726.997842 667.999443 L 734.000196 651.999376 L 739.001189 629.000184 L 739.001189 606.999488 L 736.001558 590.999421 C 731.333322 574.333689 724.330968 560.668272 714.999318 549.998344 C 707.66903 541.335058 699.668407 533.998277 691.00227 527.997649 C 683.66716 522.667509 675.33378 519.334363 666.00213 517.99821 Z M 666.00213 517.99821 ">
+                        <Path.RenderTransform>
+                            <MatrixTransform Matrix="0.809995  0  0  0.809811  0.00223169  334.034951"/>
+                        </Path.RenderTransform>
+                    </Path>
+                    <!-- Path 3 -->
+                    <Path Fill="White"  Data="M 658.933594 414.207031 L 661.769531 416.230469 L 660.554688 415.824219 Z M 681.613281 429.59375 L 692.546875 439.714844 L 687.285156 435.261719 Z M 696.191406 444.167969 L 707.128906 456.722656 L 703.886719 454.292969 Z M 715.632812 470.894531 L 719.277344 476.964844 L 717.660156 476.15625 Z M 720.492188 479.800781 L 722.519531 484.253906 L 721.707031 484.253906 Z M 396.496094 521.101562 L 426.464844 521.101562 L 427.273438 521.910156 L 445.09375 523.53125 L 462.914062 527.578125 L 490.453125 537.296875 C 518.210938 550.039062 541.566406 567.179688 560.519531 588.71875 C 577.097656 607.238281 590.058594 629.371094 599.398438 655.125 L 602.640625 664.84375 L 608.308594 690.757812 L 609.117188 702.902344 L 609.929688 703.714844 L 610.738281 725.578125 L 609.929688 726.386719 L 609.929688 738.535156 L 609.117188 739.34375 L 607.5 754.730469 L 604.257812 769.308594 L 602.234375 773.761719 C 597.429688 764.53125 590.949219 756.972656 582.792969 751.085938 L 569.429688 741.773438 C 568.511719 738.375 568.78125 736.214844 570.238281 735.296875 L 570.238281 706.144531 L 569.429688 705.332031 L 569.429688 699.664062 L 568.617188 698.855469 L 567 685.089844 L 562.949219 670.511719 L 550.800781 642.976562 C 541.1875 625.863281 529.171875 611.152344 514.753906 598.84375 C 498.933594 584.96875 479.761719 574.441406 457.246094 567.261719 L 441.855469 563.210938 L 437.804688 563.210938 L 432.136719 561.59375 L 425.65625 561.59375 L 424.84375 560.78125 L 397.304688 560.78125 L 396.496094 561.59375 L 390.015625 561.59375 L 373.003906 564.832031 L 348.707031 572.929688 C 327.105469 582.378906 308.878906 595.199219 294.03125 611.394531 C 279.882812 626.132812 268.8125 643.949219 260.820312 664.84375 L 255.960938 680.230469 L 252.722656 696.425781 L 251.910156 709.382812 L 251.101562 710.191406 L 251.101562 731.246094 L 251.910156 732.058594 L 252.722656 745.824219 L 256.769531 764.449219 C 260.390625 776.488281 264.980469 787.554688 270.539062 797.652344 C 280.261719 814.65625 292.277344 829.371094 306.585938 841.785156 C 319.761719 853.71875 335.421875 863.164062 353.566406 870.128906 L 382.726562 878.226562 L 394.066406 879.039062 L 394.875 879.847656 L 415.933594 879.847656 L 417.148438 881.0625 L 423.628906 894.019531 C 428.921875 901.683594 434.996094 908.570312 441.855469 914.667969 L 444.691406 916.695312 L 429.703125 919.527344 L 402.164062 920.339844 L 401.355469 919.527344 L 390.824219 919.527344 L 390.015625 918.71875 L 384.34375 918.71875 L 383.535156 917.910156 L 369.765625 916.289062 L 356.804688 913.050781 L 330.074219 903.332031 C 302.644531 890.539062 279.558594 873.394531 260.820312 851.910156 C 246.132812 835.28125 234.253906 815.84375 225.179688 793.601562 L 217.082031 768.5 L 213.839844 753.113281 L 213.839844 748.253906 L 212.222656 741.773438 L 212.222656 732.867188 L 211.410156 732.058594 L 211.410156 709.382812 L 212.222656 708.574219 L 212.222656 700.472656 L 213.03125 699.664062 L 213.839844 688.328125 L 217.890625 669.703125 L 230.039062 636.5 C 242.621094 609.9375 259.496094 587.667969 280.664062 569.691406 C 295.460938 556.679688 312.472656 545.882812 331.695312 537.296875 L 359.234375 527.578125 L 377.054688 523.53125 L 381.914062 523.53125 L 388.394531 521.910156 L 395.683594 521.910156 Z M 396.496094 521.101562 " />
+                    <!-- Path 4 -->
+                    <Path Fill="Transparent" Stroke="White" StrokeThickness="1" Data="M 813.500063 99.000971 L 817.00124 101.499625 L 815.501424 100.997965 Z M 823.502048 105.001599 L 824.500317 106.998593 Z M 829.50131 109.00041 L 830.499579 111.002227 Z M 832.500941 111.002227 L 834.502302 113.997718 Z M 837.501933 115.001038 L 839.498472 118.001352 Z M 841.499834 118.001352 L 854.998173 130.499445 L 848.502188 125.000477 Z M 859.497619 135.998413 L 873.000782 151.501644 L 868.998058 148.50133 Z M 873.502328 153.001801 L 874.500597 154.998795 Z M 877.500228 158.997605 L 878.498497 160.999423 Z M 883.49949 169.001868 L 887.998936 176.49783 L 886.002398 175.499333 Z M 889.498752 179.999804 L 892.001659 185.498772 L 890.998567 185.498772 Z M 489.501335 231.00032 L 526.499999 231.00032 L 527.498269 231.998817 L 549.498778 234.000634 L 571.499287 238.997942 L 605.49832 250.999198 C 639.767416 266.733964 668.601489 287.900167 692.00054 314.497807 C 712.467475 337.36676 728.468722 364.697596 739.999458 396.49996 L 744.002181 408.501217 L 750.999713 440.501351 L 751.997982 455.498098 L 753.001074 456.501418 L 753.999344 483.499421 L 753.001074 484.497918 L 753.001074 499.499489 L 751.997982 500.497985 L 750.001443 519.498367 L 745.99872 537.500251 L 743.500635 542.999219 C 737.568889 531.60092 729.568266 522.267145 719.498765 514.997896 L 703.000794 503.4983 C 701.867493 499.301719 702.20025 496.634237 703.999064 495.500678 L 703.999064 459.501732 L 703.000794 458.498412 L 703.000794 451.499287 L 701.997702 450.50079 L 700.001163 433.502226 L 695.000171 415.500342 L 680.002016 381.49839 C 668.133701 360.365952 653.299513 342.200064 635.499452 327.000723 C 615.968093 309.867097 592.298979 296.867344 564.501755 288.001464 L 545.500877 282.999332 L 540.499885 282.999332 L 533.502353 281.002339 L 525.50173 281.002339 L 524.498638 279.999018 L 490.499605 279.999018 L 489.501335 281.002339 L 481.500712 281.002339 L 460.498472 285.00115 L 430.502162 295.000589 C 403.833417 306.669013 381.331363 322.500252 363.00082 342.49913 C 345.533516 360.698785 331.866387 382.69948 321.999433 408.501217 L 316.000171 427.501598 L 312.002271 447.500476 L 310.999179 463.500543 L 310.000909 464.49904 L 310.000909 490.498546 L 310.999179 491.501867 L 312.002271 508.500431 L 316.998441 531.499623 C 321.468952 546.366131 327.135457 560.031549 333.997957 572.5007 C 346.001304 593.498075 360.835492 611.668787 378.500521 626.998366 C 394.767009 641.734636 414.100643 653.398236 436.501424 661.998815 L 472.501819 671.998254 L 486.501704 673.001574 L 487.499974 674.000071 L 513.498383 674.000071 L 514.998199 675.500228 L 522.998822 691.500296 C 529.533388 700.964309 537.032466 709.468415 545.500877 716.998142 L 549.002054 719.501619 L 530.4979 722.99877 L 496.498867 724.00209 L 495.500597 722.99877 L 482.498981 722.99877 L 481.500712 722.000273 L 474.498358 722.000273 L 473.500088 721.001776 L 456.500572 718.999959 L 440.499325 715.001148 L 407.498561 702.999892 C 373.63456 687.202418 345.133243 666.031391 321.999433 639.501283 C 303.866616 618.966979 289.201217 594.964466 277.998415 567.498569 L 268.001253 536.501755 L 263.99853 517.501373 L 263.99853 511.500745 L 262.001991 503.4983 L 262.001991 492.500364 L 260.998899 491.501867 L 260.998899 463.500543 L 262.001991 462.502046 L 262.001991 452.497784 L 263.00026 451.499287 L 263.99853 437.501037 L 268.999522 414.501845 L 283.997677 373.500768 C 299.531136 340.699907 320.364586 313.200243 346.498027 291.001778 C 364.765876 274.934179 385.768116 261.601594 409.499923 250.999198 L 443.498956 238.997942 L 465.499465 234.000634 L 471.498727 234.000634 L 479.49935 231.998817 L 488.498243 231.998817 Z M 489.501335 231.00032 ">
+                        <Path.RenderTransform>
+                            <MatrixTransform Matrix="0.809995  0  0  0.809811  0.00223169  334.034951"/>
+                        </Path.RenderTransform>
+                    </Path>
+                    <!-- Path 5 -->
+                    <Path Fill="White" Stroke="White" StrokeThickness="1" Data="M 503.501221 318.998278 L 511.501844 318.998278 L 521.002283 324.000409 L 525.998453 335.500005 L 525.998453 446.501979 L 527.498269 448.002136 L 536.000438 455.498098 L 538.498523 459.000072 L 552.498409 459.000072 L 554.49977 458.001575 L 557.499401 459.000072 L 564.501755 458.001575 L 567.501386 459.000072 C 568.702203 457.200848 571.364255 456.868016 575.50201 458.001575 L 578.501641 459.000072 L 583.497811 458.001575 L 585.499172 458.001575 L 587.500534 459.000072 L 616.498574 459.000072 L 625.999013 466.500857 L 628.998644 474.498479 L 628.998644 480.499107 C 627.334862 486.499736 624.166441 491.000207 619.498205 494.000521 L 614.502035 496.002338 L 537.500254 496.002338 L 536.000438 497.497671 L 527.498269 507.000274 L 513.498383 513.000902 L 501.499859 513.000902 C 491.700422 510.868846 484.201344 506.368375 478.997804 499.499489 C 475.597901 495.63574 473.268606 490.633609 472.000273 484.497918 L 472.000273 470.499668 C 473.934119 461.431195 478.100809 454.600898 484.500343 449.99913 L 488.999789 446.501979 L 488.999789 333.498188 C 490.268122 328.365818 492.766207 324.531011 496.498867 321.998592 Z M 666.00213 517.99821 C 675.531505 519.599664 683.700918 522.93281 690.500724 527.997649 C 699.764858 534.065808 707.934271 541.233761 714.999318 549.501508 C 724.533515 560.634506 731.531047 574.299924 736.001558 590.497761 L 739.001189 606.497828 L 739.001189 628.498523 L 734.000196 651.497716 L 726.997842 667.497783 C 720.265552 679.76434 711.768205 690.26544 701.500979 699.001081 C 692.834842 706.333038 682.832857 712.333666 671.499846 716.998142 L 654.50033 722.000273 L 629.50019 724.00209 L 628.501921 722.99877 L 619.498205 722.99877 L 605.49832 719.998456 L 587.500534 712.999331 C 573.500648 705.667374 561.666091 696.164771 552.001685 684.501171 C 545.399603 676.300955 540.398611 666.798353 536.998708 655.998187 L 555.49804 661.998815 C 559.168006 661.000318 561.502124 661.33315 562.500394 663.002135 L 584.500903 663.002135 C 613.031155 658.197774 634.867697 646.698178 650.000883 628.498523 C 658.464473 619.299811 665.13407 608.301875 670.000031 595.499892 L 673.997931 582.500139 L 675.001023 570.498883 L 675.999293 569.500386 L 675.999293 551.498501 L 672.001392 532.49812 Z M 666.00213 517.99821 ">
+                        <Path.RenderTransform>
+                            <MatrixTransform Matrix="0.809995  0  0  0.809811  0.00223169  334.034951"/>
+                        </Path.RenderTransform>
+                    </Path>
+                </Canvas>
+            </Viewbox>
+        </ControlTemplate>
+
+        <!-- Theme Colors - Default Dark -->
+        <SolidColorBrush x:Key="BgDark" Color="#1A1C1C"/>
+        <SolidColorBrush x:Key="BgSidebar" Color="#1C1E1E"/>
+        <SolidColorBrush x:Key="SurfaceContainer" Color="#2B2D2D"/>
+        <SolidColorBrush x:Key="SurfaceLow" Color="#232525"/>
+        <SolidColorBrush x:Key="TextLight" Color="#F1F1F1"/>
+        <SolidColorBrush x:Key="TextMuted" Color="#A0A6AE"/>
+        <SolidColorBrush x:Key="BorderColor" Color="#1AFFFFFF"/>
+        <SolidColorBrush x:Key="PrimaryBlue" Color="#0078D4"/>
+        <SolidColorBrush x:Key="ErrorBrush" Color="#BA1A1A"/>
+
+        <!-- Styles -->
+        <Style x:Key="DigitalInput" TargetType="TextBox">
+            <Setter Property="Background" Value="{DynamicResource SurfaceContainer}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryBlue}"/>
+            <Setter Property="BorderThickness" Value="0,0,0,2"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="FontSize" Value="42"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Width" Value="90"/>
+            <Setter Property="Height" Value="70"/>
+            <Setter Property="CaretBrush" Value="{DynamicResource TextLight}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                CornerRadius="8">
+                            <ScrollViewer x:Name="PART_ContentHost" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DigitalInputSmall" TargetType="TextBox" BasedOn="{StaticResource DigitalInput}">
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="Width" Value="55"/>
+            <Setter Property="Height" Value="36"/>
+        </Style>
+
+        <Style x:Key="TopNavButton" TargetType="RadioButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="navBorder" Background="Transparent" Padding="16,0" BorderThickness="0,0,0,3" BorderBrush="Transparent" Cursor="Hand">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                                <Setter TargetName="navBorder" Property="BorderBrush" Value="{DynamicResource PrimaryBlue}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="navBorder" Property="Background" Value="#08FFFFFF"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SidebarActionButton" TargetType="RadioButton">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="actionBorder" Background="Transparent" CornerRadius="8" Margin="0,2" Padding="16,12" Cursor="Hand">
+                            <ContentPresenter VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="actionBorder" Property="Background" Value="{DynamicResource SurfaceLow}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="actionBorder" Property="Background" Value="#08FFFFFF"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="PivotButton" TargetType="RadioButton">
+            <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border x:Name="pivotBorder" Background="Transparent" CornerRadius="8" Padding="15,8" Margin="2" Cursor="Hand">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="pivotBorder" Property="Background" Value="{DynamicResource SurfaceContainer}"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                                <Setter Property="FontWeight" Value="SemiBold"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="pivotBorder" Property="Background" Value="#0AFFFFFF"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="SwitchStyle" TargetType="CheckBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid x:Name="Grid" Background="Transparent" Cursor="Hand">
+                            <Border x:Name="BackgroundBorder" Width="40" Height="20" CornerRadius="10" Background="#717783" SnapsToDevicePixels="True">
+                                <Ellipse x:Name="Thumb" Width="14" Height="14" HorizontalAlignment="Left" Margin="3,0" Fill="White" VerticalAlignment="Center">
+                                    <Ellipse.RenderTransform>
+                                        <TranslateTransform x:Name="ThumbTransform" X="0"/>
+                                    </Ellipse.RenderTransform>
+                                </Ellipse>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="BackgroundBorder" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                <Trigger.EnterActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ThumbTransform" Storyboard.TargetProperty="X" To="20" Duration="0:0:0.15"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.EnterActions>
+                                <Trigger.ExitActions>
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <DoubleAnimation Storyboard.TargetName="ThumbTransform" Storyboard.TargetProperty="X" To="0" Duration="0:0:0.15"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </Trigger.ExitActions>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DayListBox" TargetType="ListBox">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="ItemsPanel">
+                <Setter.Value>
+                    <ItemsPanelTemplate>
+                        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"/>
+                    </ItemsPanelTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Custom CheckBox Style that looks exactly like the DayListBoxItem -->
+        <Style x:Key="DayCheckBox" TargetType="CheckBox">
+            <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Border x:Name="Border" CornerRadius="16" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Background="Transparent" Padding="{TemplateBinding Padding}" Margin="{TemplateBinding Margin}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource PrimaryBlue}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#0AFFFFFF"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        
+        <Style x:Key="DayListBoxItem" TargetType="ListBoxItem">
+            <Setter Property="Foreground" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Margin" Value="4"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ListBoxItem">
+                        <Border x:Name="Border" CornerRadius="16" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Background="Transparent" Padding="{TemplateBinding Padding}" Margin="{TemplateBinding Margin}" Cursor="Hand">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource PrimaryBlue}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#0AFFFFFF"/>
+                                <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="AccentButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" CornerRadius="12" BorderThickness="2" BorderBrush="Transparent" Cursor="Hand" Padding="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Dynamic ComboBox Dropdown Item Style -->
+        <Style TargetType="ComboBoxItem">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+            <Setter Property="Padding" Value="12,8"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBoxItem">
+                        <Border x:Name="Border" Background="{TemplateBinding Background}" CornerRadius="4" Margin="2,1">
+                            <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                <Setter Property="Foreground" Value="White"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Custom Fluent ComboBox Style to override default Windows theme colors -->
+        <Style x:Key="FluentComboBox" TargetType="ComboBox">
+            <Setter Property="Background" Value="{DynamicResource SurfaceContainer}"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="10,6"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton x:Name="ToggleButton" 
+                                          Background="{TemplateBinding Background}" 
+                                          BorderBrush="{TemplateBinding BorderBrush}" 
+                                          BorderThickness="{TemplateBinding BorderThickness}" 
+                                          Focusable="false" 
+                                          IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                          ClickMode="Press">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="8">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="30"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="1" Text="▼" Foreground="{DynamicResource TextMuted}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#0AFFFFFF"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <ContentPresenter x:Name="ContentSite" IsHitTestVisible="False" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="12,0,30,0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                <Grid x:Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="{TemplateBinding MaxDropDownHeight}">
+                                    <Border x:Name="DropDownBorder" Background="{DynamicResource SurfaceLow}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" CornerRadius="8">
+                                        <ScrollViewer Margin="4" SnapsToDevicePixels="True">
+                                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="DigitalComboBoxSmall" TargetType="ComboBox">
+            <Setter Property="Background" Value="{DynamicResource SurfaceContainer}"/>
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryBlue}"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource TextMuted}"/>
+            <Setter Property="BorderThickness" Value="0,0,0,2"/>
+            <Setter Property="FontSize" Value="22"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="SnapsToDevicePixels" Value="True"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ComboBox">
+                        <Grid>
+                            <ToggleButton x:Name="ToggleButton" 
+                                           Background="{TemplateBinding Background}" 
+                                           BorderBrush="{TemplateBinding BorderBrush}" 
+                                           BorderThickness="{TemplateBinding BorderThickness}" 
+                                           Focusable="false" 
+                                           IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                                           ClickMode="Press">
+                                <ToggleButton.Template>
+                                    <ControlTemplate TargetType="ToggleButton">
+                                        <Border x:Name="Border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="8">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="15"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="1" Text="▾" Foreground="{DynamicResource TextMuted}" FontSize="10" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,4,4"/>
+                                            </Grid>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="#0AFFFFFF"/>
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </ToggleButton.Template>
+                            </ToggleButton>
+                            <ContentPresenter x:Name="ContentSite" IsHitTestVisible="False" Content="{TemplateBinding SelectionBoxItem}" ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" ContentTemplateSelector="{TemplateBinding ItemTemplateSelector}" Margin="4,0,15,0" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Popup x:Name="Popup" Placement="Bottom" IsOpen="{TemplateBinding IsDropDownOpen}" AllowsTransparency="True" Focusable="False" PopupAnimation="Slide">
+                                <Grid x:Name="DropDown" SnapsToDevicePixels="True" MinWidth="{TemplateBinding ActualWidth}" MaxHeight="200">
+                                    <Border x:Name="DropDownBorder" Background="{DynamicResource SurfaceLow}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" CornerRadius="8">
+                                        <ScrollViewer Margin="4" SnapsToDevicePixels="True">
+                                            <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                        </ScrollViewer>
+                                    </Border>
+                                </Grid>
+                            </Popup>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Resources>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Background" Value="Transparent"/>
+                    <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+                    <Setter Property="Padding" Value="6,4"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="ComboBoxItem">
+                                <Border x:Name="Border" Background="{TemplateBinding Background}" CornerRadius="4" Margin="2,1">
+                                    <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+                                        <Setter Property="Foreground" Value="White"/>
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </Style.Resources>
+        </Style>
+
+        <!-- Custom Fluent Button Style to maintain contrast in light and dark mode -->
+        <Style x:Key="FluentButton" TargetType="Button">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBlue}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border x:Name="BackgroundBorder" Background="{TemplateBinding Background}" CornerRadius="8"/>
+                            <Border x:Name="HoverBorder" Background="#1DFFFFFF" CornerRadius="8" Visibility="Collapsed"/>
+                            <Border x:Name="PressedBorder" Background="#1D000000" CornerRadius="8" Visibility="Collapsed"/>
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Padding}"/>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="HoverBorder" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="PressedBorder" Property="Visibility" Value="Visible"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Opacity" Value="0.5"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Custom Increment Button Style -->
+        <Style x:Key="IncrementButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="{DynamicResource SurfaceContainer}"/>
+            <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="{DynamicResource BorderColor}"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                                Background="{TemplateBinding Background}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                CornerRadius="6" 
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center" 
+                                              Margin="4"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.85"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Opacity" Value="0.7"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Default elements text styles to cascade properly on Windows -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+        </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Foreground" Value="{DynamicResource TextLight}"/>
+        </Style>
+    </Window.Resources>
+
+    <Border Background="{DynamicResource BgDark}" CornerRadius="16" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" TextBlock.Foreground="{DynamicResource TextLight}">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="25" Color="Black" Opacity="0.4" ShadowDepth="0"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="56"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Top Navigation Bar / Window Header -->
+            <Border Grid.Row="0" Background="#0AFFFFFF" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource BorderColor}" MouseLeftButtonDown="Baslik_Tasima">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="260"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Branding -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="24,0">
+                        <Control Template="{StaticResource AppLogoTemplate}" Width="24" Height="24" VerticalAlignment="Center"/>
+                        <TextBlock Text="Chronoff" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="8,0,0,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="v1.0" FontSize="11" Foreground="{DynamicResource TextMuted}" Margin="8,2,0,0" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <!-- Main Top Tabs -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Stretch">
+                        <RadioButton x:Name="rbNavZamanlayicilar" Style="{StaticResource TopNavButton}" Content="{DynamicResource MainMenu.Timers}" Tag="timers" IsChecked="True" Checked="SekmeGecisi"/>
+                        <RadioButton x:Name="rbNavAyarlar" Style="{StaticResource TopNavButton}" Content="{DynamicResource MainMenu.Settings}" Tag="settings" Checked="SekmeGecisi"/>
+                        <RadioButton x:Name="rbNavGorunum" Style="{StaticResource TopNavButton}" Content="{DynamicResource MainMenu.Appearance}" Tag="appearance" Checked="SekmeGecisi"/>
+                        <RadioButton x:Name="rbNavHakkinda" Style="{StaticResource TopNavButton}" Content="{DynamicResource MainMenu.About}" Tag="about" Checked="SekmeGecisi"/>
+                    </StackPanel>
+ 
+                    <!-- Window Controls and Quick Theme Toggle -->
+                    <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,10,0">
+                        <Button x:Name="btnTemaDegistir" Content="🌙" Width="40" Height="40" Background="Transparent" Foreground="{DynamicResource TextLight}" BorderThickness="0" FontSize="14" Click="TemaDegistir_Tikla" ToolTip="{DynamicResource MainMenu.Theme.Tooltip}" Cursor="Hand"/>
+                        <!-- Ghostly gap for minimize/maximize buttons -->
+                        <Border Width="80"/>
+                        <Button Content="✕" Width="40" Height="40" Background="Transparent" Foreground="{DynamicResource TextLight}" BorderThickness="0" FontSize="14" Click="Pencere_Kapat" Cursor="Hand"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Main Application Content -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/> <!-- Sidebar Width (Auto so it can collapse) -->
+                    <ColumnDefinition Width="*"/>    <!-- Content Workspace -->
+                </Grid.ColumnDefinitions>
+
+                <!-- Sidebar for Actions -->
+                <Border x:Name="YanPanel" Grid.Column="0" Width="260" Background="{DynamicResource BgSidebar}" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource BorderColor}" Visibility="Visible">
+                    <Grid Margin="16,24">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+ 
+                        <TextBlock x:Name="lblSidebarSystemActionHeader" Grid.Row="0" Text="{DynamicResource Sidebar.SystemAction}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMuted}" Margin="8,0,0,16"/>
+ 
+                        <!-- GorevPaneli -->
+                        <StackPanel Grid.Row="1" x:Name="GorevPaneli">
+                            <RadioButton x:Name="rbGorevKapat" Style="{StaticResource SidebarActionButton}" Tag="kapat" Checked="GorevSecimi">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="⏻" FontSize="16" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="txtGorevKapat" Text="{DynamicResource Sidebar.Shutdown}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="rbGorevYenidenBaslat" Style="{StaticResource SidebarActionButton}" Tag="yenidenbaslat" IsChecked="True" Checked="GorevSecimi">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="↻" FontSize="16" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="txtGorevYenidenBaslat" Text="{DynamicResource Sidebar.Restart}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="rbGorevSleep" Style="{StaticResource SidebarActionButton}" Tag="sleep" Checked="GorevSecimi">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="🌙" FontSize="15" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="txtGorevUyku" Text="{DynamicResource Sidebar.Sleep}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="rbGorevHibernate" Style="{StaticResource SidebarActionButton}" Tag="hibernate" Checked="GorevSecimi">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="💤" FontSize="14" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="txtGorevHazirdaBeklet" Text="{DynamicResource Sidebar.Hibernate}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="rbGorevKilitle" Style="{StaticResource SidebarActionButton}" Tag="kilitle" Checked="GorevSecimi">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="🔒" FontSize="14" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="txtGorevKilitle" Text="{DynamicResource Sidebar.Lock}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                            <RadioButton x:Name="rbGorevOturumuKapat" Style="{StaticResource SidebarActionButton}" Tag="oturumukapat" Checked="GorevSecimi">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="🚪" FontSize="14" Margin="0,0,12,0" VerticalAlignment="Center"/>
+                                    <TextBlock x:Name="txtGorevOturumuKapat" Text="{DynamicResource Sidebar.Logoff}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </RadioButton>
+                        </StackPanel>
+ 
+                        <!-- Durum Box -->
+                        <Border Grid.Row="2" Background="{DynamicResource SurfaceLow}" CornerRadius="12" Padding="16,12" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}">
+                            <StackPanel HorizontalAlignment="Center">
+                                <TextBlock x:Name="lblSidebarStatusHeader" Text="{DynamicResource Sidebar.Status}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMuted}" HorizontalAlignment="Center"/>
+                                <TextBlock x:Name="DurumMetni" Text="Yeniden Başlat Zamanlanıyor..." FontSize="13" Foreground="{DynamicResource TextLight}" FontWeight="SemiBold" Margin="0,4,0,0" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                                <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,8"/>
+                                <TextBlock x:Name="DurumHatirlaticiMetni" Text="Hatırlatıcı Kapalı" FontSize="11" Foreground="{DynamicResource TextMuted}" FontWeight="Normal" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center"/>
+                            </StackPanel>
+                        </Border>
+                    </Grid>
+                </Border>
+
+                <!-- Views Container -->
+                <Grid Grid.Column="1" Margin="24">
+                    
+                    <!-- 1. VIEW: TIMERS -->
+                    <Grid x:Name="ZamanlayiciSekmesi" Visibility="Visible">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" HorizontalAlignment="Center" Margin="0,4,0,8">
+                            <TextBlock x:Name="EylemBasligi" Text="Yeniden Başlat" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource TextLight}" HorizontalAlignment="Center"/>
+                            <TextBlock x:Name="lblTimingDescription" Text="{DynamicResource MainScreen.SelectTime}" Foreground="{DynamicResource TextMuted}" FontSize="14" HorizontalAlignment="Center" Margin="0,6,0,0"/>
+                        </StackPanel>
+
+                        <!-- Timing Mode Switcher Container -->
+                        <StackPanel Grid.Row="1" HorizontalAlignment="Center" Margin="0,0,0,8">
+                            <!-- Main Switcher -->
+                            <Border Background="{DynamicResource SurfaceLow}" CornerRadius="12" Padding="4" HorizontalAlignment="Center" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}">
+                                <StackPanel Orientation="Horizontal">
+                                    <RadioButton x:Name="rbTabTarihSaat" Style="{StaticResource PivotButton}" Content="{DynamicResource MainScreen.DateTime}" Tag="0" Checked="SekmeDegisti" IsChecked="False" Width="100"/>
+                                    <RadioButton x:Name="rbTabGeriSayim" Style="{StaticResource PivotButton}" Content="{DynamicResource MainScreen.Countdown}" Tag="1" Checked="SekmeDegisti" IsChecked="True" Width="100"/>
+                                    <RadioButton x:Name="rbTabYineleme" Style="{StaticResource PivotButton}" Content="{DynamicResource MainScreen.Recurrence}" Tag="2" Checked="SekmeDegisti" IsChecked="False" Width="100"/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Yineleme Selector (only visible when Yineleme tab is active) -->
+                            <ComboBox x:Name="YinelemeTipi" Style="{StaticResource FluentComboBox}" SelectionChanged="YinelemeTipi_Degisti" SelectedIndex="0" Width="200" Height="36" Margin="0,6,0,0" Visibility="Collapsed">
+                                <ComboBoxItem Content="Günlük"/>
+                                <ComboBoxItem Content="Haftalık"/>
+                                <ComboBoxItem Content="Aylık"/>
+                            </ComboBox>
+
+                            <!-- Yineleme Explanations (only visible when Yineleme tab is active) -->
+                            <StackPanel x:Name="YinelemeAciklamaPanel" Visibility="Collapsed" Margin="0,8,0,0">
+                                <TextBlock x:Name="lblYinelemeGunlukAciklama" Text="{DynamicResource MainScreen.DailyDesc}" Foreground="{DynamicResource TextMuted}" FontSize="12" HorizontalAlignment="Center" Visibility="Visible"/>
+                                <TextBlock x:Name="lblYinelemeHaftalikAciklama" Text="{DynamicResource MainScreen.WeeklyDesc}" Foreground="{DynamicResource TextMuted}" FontSize="12" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                                <TextBlock x:Name="lblYinelemeAylikAciklama" Text="{DynamicResource MainScreen.MonthlyDesc}" Foreground="{DynamicResource TextMuted}" FontSize="12" HorizontalAlignment="Center" Visibility="Collapsed"/>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <!-- Timing Tabs Content -->
+                        <Grid Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                            
+                            <Grid x:Name="ZamanGirisPaneli" Visibility="Visible">
+                                <!-- TAB: TARİH / SAAT -->
+                                <Grid x:Name="SekmeTarihSaat" Visibility="Collapsed" Width="360" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Date Row (Dynamic Grid layout to allow column reordering in C#) -->
+                                    <Grid Grid.Row="0" x:Name="TarihKutulariGrid" HorizontalAlignment="Center" Margin="0,-16,0,16" VerticalAlignment="Center">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/> <!-- Pos 1 -->
+                                            <ColumnDefinition Width="Auto"/> <!-- Dot 1 -->
+                                            <ColumnDefinition Width="Auto"/> <!-- Pos 2 -->
+                                            <ColumnDefinition Width="Auto"/> <!-- Dot 2 -->
+                                            <ColumnDefinition Width="Auto"/> <!-- Pos 3 -->
+                                        </Grid.ColumnDefinitions>
+                                        <ComboBox x:Name="TarihGunGir" Grid.Column="0" Style="{StaticResource DigitalComboBoxSmall}" Width="65" IsEditable="False"/>
+                                        <TextBlock x:Name="TarihNokta1" Grid.Column="1" Text="." Foreground="{DynamicResource TextMuted}" FontSize="24" FontWeight="Bold" Margin="4,0" VerticalAlignment="Center"/>
+                                        <ComboBox x:Name="TarihAyGir" Grid.Column="2" Style="{StaticResource DigitalComboBoxSmall}" Width="65" IsEditable="False" SelectionChanged="TarihTipi_SelectionChanged"/>
+                                        <TextBlock x:Name="TarihNokta2" Grid.Column="3" Text="." Foreground="{DynamicResource TextMuted}" FontSize="24" FontWeight="Bold" Margin="4,0" VerticalAlignment="Center"/>
+                                        <ComboBox x:Name="TarihYilGir" Grid.Column="4" Style="{StaticResource DigitalComboBoxSmall}" Width="95" IsEditable="False" SelectionChanged="TarihTipi_SelectionChanged"/>
+                                    </Grid>
+                                    
+                                    <!-- Time Row -->
+                                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,16" VerticalAlignment="Center">
+                                        <TextBox x:Name="TarihSaatGir" Style="{StaticResource DigitalInputSmall}" Text="12" Width="78"/>
+                                        <TextBlock Text=":" Foreground="{DynamicResource TextMuted}" FontSize="24" FontWeight="Bold" Margin="4,0" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="TarihDakikaGir" Style="{StaticResource DigitalInputSmall}" Text="00" Width="78"/>
+                                        <Button x:Name="btnTarihSaatAmPm" Content="ÖÖ" Style="{StaticResource IncrementButtonStyle}" FontSize="14" FontWeight="Bold" Width="78" Height="36" Margin="8,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="btnAmPm_Click"/>
+                                    </StackPanel>
+
+                                    <!-- Buttons Row -->
+                                    <StackPanel Grid.Row="2" x:Name="TarihSaatButtonsPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0" Visibility="Collapsed" VerticalAlignment="Center">
+                                        <Button x:Name="btnTarihSaatEkle" Style="{StaticResource IncrementButtonStyle}" Content="+ 1 Saat" Tag="Saat+" Click="Sayac_Ayar" Width="80" FontSize="11" Height="36" Margin="4"/>
+                                        <Button x:Name="btnTarihSaatDakikaEkle" Style="{StaticResource IncrementButtonStyle}" Content="+ 5 Dk" Tag="Dakika+" Click="Sayac_Ayar" Width="80" FontSize="11" Height="36" Margin="4"/>
+                                    </StackPanel>
+                                </Grid>
+ 
+                                <!-- TAB: GERİ SAYIM -->
+                                <Grid x:Name="SekmeGeriSayim" Visibility="Visible" Width="360" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Time Row -->
+                                    <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,12" VerticalAlignment="Center">
+                                        <TextBox x:Name="SaatGir" Style="{StaticResource DigitalInputSmall}" Text="00" Width="90" Height="50" FontSize="28"/>
+                                        <TextBlock Text=":" Foreground="{DynamicResource TextLight}" FontSize="24" FontWeight="Bold" Margin="10,0" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="DakikaGir" Style="{StaticResource DigitalInputSmall}" Text="30" Width="90" Height="50" FontSize="28"/>
+                                    </StackPanel>
+
+                                    <!-- Buttons Row -->
+                                    <StackPanel Grid.Row="1" x:Name="GeriSayimButtonsPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,4,0,0" VerticalAlignment="Center">
+                                        <Button x:Name="btnSaatEkle" Style="{StaticResource IncrementButtonStyle}" Content="+ 1 Saat" Tag="Saat+" Click="Sayac_Ayar" Width="90" Height="36" Margin="4"/>
+                                        <Button x:Name="btnDakikaEkle" Style="{StaticResource IncrementButtonStyle}" Content="+ 5 Dk" Tag="Dakika+" Click="Sayac_Ayar" Width="90" Height="36" Margin="4"/>
+                                    </StackPanel>
+                                </Grid>
+
+                                <!-- TAB: YİNELEME -->
+                                <Grid x:Name="SekmeYineleme" Visibility="Collapsed" Width="360" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/> <!-- Row for Day Selection Panels (Daily, Weekly, Monthly) -->
+                                        <RowDefinition Height="Auto"/> <!-- Row for Time Inputs -->
+                                        <RowDefinition Height="Auto"/> <!-- Row for Increment Buttons -->
+                                    </Grid.RowDefinitions>
+
+                                    <!-- Day Selection Panels (at the top) -->
+                                    <!-- YinelemeGunlukPanel (for Daily) -->
+                                    <StackPanel Grid.Row="0" x:Name="YinelemeGunlukPanel" Visibility="Visible" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,10,0,6">
+                                    </StackPanel>
+
+                                    <!-- YinelemeGunlerPanel (for Weekly) -->
+                                    <StackPanel Grid.Row="0" x:Name="YinelemeGunlerPanel" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,-12,0,6">
+                                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                                            <!-- Row 1: First 4 days -->
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <CheckBox x:Name="chkPzt" Content="Pzt" IsChecked="True" Style="{StaticResource DayCheckBox}"/>
+                                                <CheckBox x:Name="chkSal" Content="Sal" Style="{StaticResource DayCheckBox}"/>
+                                                <CheckBox x:Name="chkCar" Content="Çar" Style="{StaticResource DayCheckBox}"/>
+                                                <CheckBox x:Name="chkPer" Content="Per" Style="{StaticResource DayCheckBox}"/>
+                                            </StackPanel>
+                                            <!-- Row 2: Last 3 days -->
+                                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                                <CheckBox x:Name="chkCum" Content="Cum" IsChecked="True" Style="{StaticResource DayCheckBox}"/>
+                                                <CheckBox x:Name="chkCmt" Content="Cmt" Style="{StaticResource DayCheckBox}"/>
+                                                <CheckBox x:Name="chkPaz" Content="Paz" Style="{StaticResource DayCheckBox}"/>
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </StackPanel>
+
+                                    <!-- YinelemeAyPanel (for Monthly) -->
+                                    <StackPanel Grid.Row="0" x:Name="YinelemeAyPanel" Visibility="Collapsed" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,2,0,4">
+                                        <ListBox x:Name="AyinGunleriList" Width="215" BorderThickness="0" Background="Transparent" SelectionMode="Multiple">
+                                            <ListBox.ItemsPanel>
+                                                <ItemsPanelTemplate>
+                                                    <UniformGrid Columns="7" HorizontalAlignment="Center"/>
+                                                </ItemsPanelTemplate>
+                                            </ListBox.ItemsPanel>
+                                            <ListBox.ItemContainerStyle>
+                                                <Style TargetType="ListBoxItem" BasedOn="{StaticResource DayListBoxItem}">
+                                                    <Setter Property="Width" Value="28"/>
+                                                    <Setter Property="Height" Value="28"/>
+                                                    <Setter Property="Padding" Value="0"/>
+                                                    <Setter Property="Margin" Value="1"/>
+                                                    <Setter Property="FontSize" Value="12"/>
+                                                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                                </Style>
+                                            </ListBox.ItemContainerStyle>
+                                            <ListBoxItem Content="1" IsSelected="True"/>
+                                            <ListBoxItem Content="2"/><ListBoxItem Content="3"/><ListBoxItem Content="4"/><ListBoxItem Content="5"/><ListBoxItem Content="6"/><ListBoxItem Content="7"/>
+                                            <ListBoxItem Content="8"/><ListBoxItem Content="9"/><ListBoxItem Content="10"/><ListBoxItem Content="11"/><ListBoxItem Content="12"/><ListBoxItem Content="13"/><ListBoxItem Content="14"/>
+                                            <ListBoxItem Content="15" IsSelected="True"/><ListBoxItem Content="16"/><ListBoxItem Content="17"/><ListBoxItem Content="18"/><ListBoxItem Content="19"/><ListBoxItem Content="20"/><ListBoxItem Content="21"/>
+                                            <ListBoxItem Content="22"/><ListBoxItem Content="23"/><ListBoxItem Content="24"/><ListBoxItem Content="25"/><ListBoxItem Content="26"/><ListBoxItem Content="27"/><ListBoxItem Content="28"/>
+                                            <ListBoxItem Content="29"/><ListBoxItem Content="30" IsSelected="True"/><ListBoxItem Content="31"/>
+                                        </ListBox>
+                                    </StackPanel>
+
+                                    <!-- Time Inputs for recurrence (at the bottom) -->
+                                    <StackPanel Grid.Row="1" x:Name="YinelemeZamanPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,2,0,2">
+                                        <TextBox x:Name="YinelemeSaat" Style="{StaticResource DigitalInputSmall}" Text="00" Width="78"/>
+                                        <TextBlock Text=":" Foreground="{DynamicResource TextMuted}" FontSize="24" FontWeight="Bold" Margin="4,0" VerticalAlignment="Center"/>
+                                        <TextBox x:Name="YinelemeDakika" Style="{StaticResource DigitalInputSmall}" Text="00" Width="78"/>
+                                        <Button x:Name="btnYinelemeAmPm" Content="ÖÖ" Style="{StaticResource IncrementButtonStyle}" FontSize="14" FontWeight="Bold" Width="78" Height="36" Margin="8,0,0,0" VerticalAlignment="Center" Visibility="Collapsed" Click="btnAmPm_Click"/>
+                                    </StackPanel>
+                                    
+                                    <!-- Increment buttons (at the bottom) -->
+                                    <StackPanel Grid.Row="2" x:Name="YinelemeButtonsPanel" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,12,0,0">
+                                        <Button x:Name="btnYinelemeSaatEkle" Style="{StaticResource IncrementButtonStyle}" Content="+ 1 Saat" Tag="Saat+" Click="Sayac_Ayar" Width="80" FontSize="11" Height="36" Margin="4"/>
+                                        <Button x:Name="btnYinelemeDakikaEkle" Style="{StaticResource IncrementButtonStyle}" Content="+ 5 Dk" Tag="Dakika+" Click="Sayac_Ayar" Width="80" FontSize="11" Height="36" Margin="4"/>
+                                    </StackPanel>
+                                </Grid>
+                            </Grid>
+ 
+                            <!-- Live Running Timer Display (replaces inputs when running) -->
+                            <TextBlock x:Name="GeriSayimMetni" Text="00:00:00" Foreground="{DynamicResource PrimaryBlue}" FontSize="64" FontWeight="Black" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed"/>
+                        </Grid>
+ 
+                        <!-- Bottom Start / Stop Bar & Notifications Toggle -->
+                        <StackPanel Grid.Row="3" VerticalAlignment="Bottom">
+                            <Border x:Name="ReminderBarBorder" Background="#0AFFFFFF" CornerRadius="20" Padding="20,10" HorizontalAlignment="Center" Margin="0,0,0,10" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="🔔" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                                    <TextBlock x:Name="lblReminderLabel" Foreground="{DynamicResource TextLight}" VerticalAlignment="Center" FontSize="13"/>
+                                    <TextBox x:Name="PopupDkGir" Text="15" Width="35" Height="24" Background="Transparent" Foreground="{DynamicResource TextLight}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource TextMuted}" TextAlignment="Center" FontSize="13" VerticalContentAlignment="Center" Margin="4,0" IsEnabled="False"/>
+                                    <TextBlock x:Name="lblReminderSuffix" Foreground="{DynamicResource TextMuted}" VerticalAlignment="Center" FontSize="13" Margin="4,0,16,0"/>
+                                    <CheckBox x:Name="HatirlaticiToggle" Checked="HatirlaticiToggle_Changed" Unchecked="HatirlaticiToggle_Changed" Style="{StaticResource SwitchStyle}" VerticalAlignment="Center"/>
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Start / Stop Button -->
+                            <Grid Width="360" HorizontalAlignment="Center" Margin="0,0,0,4">
+                                <Button x:Name="Baslat" Content="{DynamicResource MainScreen.StartTimer}" Style="{StaticResource FluentButton}" Click="Baslat_Tikla" Height="44" Background="{DynamicResource PrimaryBlue}" Foreground="White" FontSize="16"/>
+                                <Button x:Name="Iptal" Content="{DynamicResource MainScreen.StopTimer}" Style="{StaticResource FluentButton}" Click="Iptal_Tikla" Height="44" Background="{DynamicResource ErrorBrush}" Foreground="White" FontSize="16" Visibility="Collapsed"/>
+                            </Grid>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- 2. VIEW: SETTINGS -->
+                    <Grid x:Name="AyarlarSekmesi" Visibility="Collapsed">
+                        <ScrollViewer VerticalScrollBarVisibility="Auto">
+                            <StackPanel MaxWidth="700" HorizontalAlignment="Center" Margin="0,0,0,20">
+                                <TextBlock x:Name="lblSystemSettings" Text="{DynamicResource Settings.Header}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,0,0,4"/>
+                                <TextBlock x:Name="lblSystemSettingsDesc" Text="{DynamicResource Settings.Description}" Foreground="{DynamicResource TextMuted}" FontSize="14" Margin="0,0,0,30"/>
+
+                                <!-- General section -->
+                                <TextBlock x:Name="lblGeneral" Text="{DynamicResource Settings.Group.General}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,0,0,10"/>
+                                <Border Background="{DynamicResource SurfaceLow}" CornerRadius="12" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Margin="0,0,0,25" Padding="20">
+                                    <StackPanel>
+                                        <!-- Dil Seçimi -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lblLanguageSelection" Text="{DynamicResource Settings.Language}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lblLanguageSelectionDesc" Text="{DynamicResource Settings.LanguageDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11" Margin="0,2,0,0"/>
+                                            </StackPanel>
+                                            <ComboBox Grid.Column="1" x:Name="dilSecimKutusu" Style="{StaticResource FluentComboBox}" SelectedIndex="0" Width="140" Height="35" VerticalAlignment="Center" Margin="10,0,0,0" SelectionChanged="cmbLanguage_SelectionChanged">
+                                            </ComboBox>
+                                        </Grid>
+
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                        <!-- Tarih Formatı -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lblDateFormat" Text="{DynamicResource Settings.DateFormat}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lblDateFormatDesc" Text="{DynamicResource Settings.DateFormatDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11" Margin="0,2,0,0"/>
+                                            </StackPanel>
+                                            <ComboBox Grid.Column="1" x:Name="cmbDateFormat" Style="{StaticResource FluentComboBox}" SelectedIndex="0" Width="140" Height="35" VerticalAlignment="Center" Margin="10,0,0,0" SelectionChanged="cmbDateFormat_SelectionChanged">
+                                                <ComboBoxItem Content="GG.AA.YYYY"/>
+                                                <ComboBoxItem Content="AA.GG.YYYY"/>
+                                            </ComboBox>
+                                        </Grid>
+
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                        <!-- 12 Saat Gösterimi -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lbl12HourFormat" Text="{DynamicResource Settings.Format12Hour}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lbl12HourFormatDesc" Text="{DynamicResource Settings.Format12HourDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11" Margin="0,2,0,0"/>
+                                            </StackPanel>
+                                            <CheckBox Grid.Column="1" x:Name="chkOnIkiSaat" Style="{StaticResource SwitchStyle}" IsChecked="False" Checked="chkOnIkiSaat_Changed" Unchecked="chkOnIkiSaat_Changed" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                        <!-- Parola Korumasını Etkinleştir -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lblParolayiEtkinlestir" Text="{DynamicResource Settings.Password}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lblParolaAciklamasi" Text="{DynamicResource Settings.PasswordDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                            </StackPanel>
+                                            <CheckBox Grid.Column="1" x:Name="chkParolaEtkin" Style="{StaticResource SwitchStyle}" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+                                        
+                                        <!-- Password Field (Simulated disable using opacity) -->
+                                        <Grid x:Name="parolaAyarlari" Opacity="0.5" IsEnabled="{Binding IsChecked, ElementName=chkParolaEtkin}">
+                                            <StackPanel>
+                                                <TextBlock x:Name="lblParolaGirisi" Text="{DynamicResource Settings.Passwords.Box}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMuted}" Margin="0,0,0,6"/>
+                                                 <Grid>
+                                                    <PasswordBox x:Name="txtUygulamaParolasi" Height="40" Background="{DynamicResource SurfaceContainer}" Foreground="{DynamicResource TextLight}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" PasswordChanged="TxtParolaDegisti" Padding="8,0" VerticalContentAlignment="Center"/>
+                                                    <TextBlock x:Name="txtParolaGirisAlani" Text="****" Foreground="{DynamicResource TextMuted}" FontSize="14" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="12,0,0,0" IsHitTestVisible="False" Visibility="Visible"/>
+                                                 </Grid>
+                                            </StackPanel>
+                                        </Grid>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Behavior section -->
+                                <TextBlock x:Name="lblBehavior" Text="{DynamicResource Settings.Group.Behavior}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,20,0,10"/>
+                                <Border Background="{DynamicResource SurfaceLow}" CornerRadius="12" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Margin="0,0,0,25">
+                                    <StackPanel>
+                                        <Border Padding="20">
+                                            <Grid>
+                                                <StackPanel>
+                                                    <TextBlock x:Name="lblStartWithWindows" Text="{DynamicResource Settings.StartWithWindows}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                    <TextBlock x:Name="lblStartWithWindowsDesc" Text="{DynamicResource Settings.StartWithWindowsDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                                </StackPanel>
+                                                 <CheckBox x:Name="chkBaslangictaCalistir" Checked="BaslangictaCalistir_Changed" Unchecked="BaslangictaCalistir_Changed" Style="{StaticResource SwitchStyle}" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1"/>
+                                        <Border Padding="20">
+                                            <Grid>
+                                                <StackPanel>
+                                                    <TextBlock x:Name="lblRunInBackground" Text="{DynamicResource Settings.RunInBackground}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                    <TextBlock x:Name="lblRunInBackgroundDesc" Text="{DynamicResource Settings.RunInBackgroundDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                                </StackPanel>
+                                                 <CheckBox x:Name="chkArkaPlandaCalis" Style="{StaticResource SwitchStyle}" IsChecked="True" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
+                                    </StackPanel>
+                                </Border>
+ 
+                                   <!-- Timer settings section -->
+                                <TextBlock x:Name="lblTimerSettings" Text="{DynamicResource Settings.Group.Timer}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,20,0,10"/>
+                                <Border Background="{DynamicResource SurfaceLow}" CornerRadius="12" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Margin="0,0,0,25" Padding="20">
+                                    <StackPanel>
+                                        <!-- 1. Süre Ekleme Butonlarını Göster -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lblShowAddButtons" Text="{DynamicResource Settings.ShowTimer}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lblShowAddButtonsDesc" Text="{DynamicResource Settings.ShowTimerDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                            </StackPanel>
+                                            <CheckBox Grid.Column="1" x:Name="chkButonGoster" Style="{StaticResource SwitchStyle}" IsChecked="True" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+
+                                        <!-- Dependent Settings Container -->
+                                        <StackPanel IsEnabled="{Binding IsChecked, ElementName=chkButonGoster}">
+                                            <!-- Sub-settings: Categories -->
+                                            <StackPanel Margin="20,0,0,15">
+                                                <Grid Margin="0,0,0,10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock x:Name="lblShowAddButtonsTarihSaat" Grid.Column="0" Text="{DynamicResource Settings.ShowTimer.DateTime}" Foreground="{DynamicResource TextLight}" FontSize="13" VerticalAlignment="Center"/>
+                                                    <CheckBox Grid.Column="1" x:Name="chkButonTarihSaat" Style="{StaticResource SwitchStyle}" IsChecked="False" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                <Grid Margin="0,0,0,10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock x:Name="lblShowAddButtonsGeriSayim" Grid.Column="0" Text="{DynamicResource Settings.ShowTimer.Countdown}" Foreground="{DynamicResource TextLight}" FontSize="13" VerticalAlignment="Center"/>
+                                                    <CheckBox Grid.Column="1" x:Name="chkButonGeriSayim" Style="{StaticResource SwitchStyle}" IsChecked="True" VerticalAlignment="Center"/>
+                                                </Grid>
+                                                <Grid Margin="0,0,0,10">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <TextBlock x:Name="lblShowAddButtonsYineleme" Grid.Column="0" Text="{DynamicResource Settings.ShowTimer.Recurrence}" Foreground="{DynamicResource TextLight}" FontSize="13" VerticalAlignment="Center"/>
+                                                    <CheckBox Grid.Column="1" x:Name="chkButonYineleme" Style="{StaticResource SwitchStyle}" IsChecked="False" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </StackPanel>
+
+                                            <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                            <!-- 2. Süre Davranışı Tersine Kullan -->
+                                            <Grid Margin="0,0,0,15">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                    <TextBlock x:Name="lblUseReverseBehavior" Text="{DynamicResource Settings.ShowTimer.ReverseBehavior}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                    <TextBlock x:Name="lblUseReverseBehaviorDesc" Text="{DynamicResource Settings.ShowTimer.ReverseBehaviorDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                                </StackPanel>
+                                                <CheckBox Grid.Column="1" x:Name="chkButonTersEylem" Style="{StaticResource SwitchStyle}" IsChecked="True" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                            </Grid>
+
+                                            <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                            <!-- 3. Saat / Dakika Increment values -->
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                    <TextBlock x:Name="lblIncrementAmounts" Text="{DynamicResource Settings.IncrementAmounts}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                    <TextBlock x:Name="lblIncrementAmountsDesc" Text="{DynamicResource Settings.IncrementAmountsDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                                </StackPanel>
+                                                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="10,0,0,0">
+                                                    <StackPanel Margin="0,0,10,0">
+                                                        <TextBlock x:Name="lblIncrementHours" Text="{DynamicResource Settings.ShowTimer.Hour}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMuted}" Margin="0,0,0,4" HorizontalAlignment="Center"/>
+                                                        <TextBox x:Name="txtSaatArtis" Text="1" Width="50" Height="28" Background="{DynamicResource SurfaceContainer}" Foreground="{DynamicResource TextLight}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                                                    </StackPanel>
+                                                    <StackPanel>
+                                                        <TextBlock x:Name="lblIncrementMinutes" Text="{DynamicResource Settings.ShowTimer.Minute}" FontSize="10" FontWeight="Bold" Foreground="{DynamicResource TextMuted}" Margin="0,0,0,4" HorizontalAlignment="Center"/>
+                                                        <TextBox x:Name="txtDakikaArtis" Text="5" Width="50" Height="28" Background="{DynamicResource SurfaceContainer}" Foreground="{DynamicResource TextLight}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="12"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+
+                                <!-- Reminder settings section -->
+                                <TextBlock x:Name="lblReminderSettings" Text="{DynamicResource Settings.Group.Reminder}" FontSize="18" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,20,0,10"/>
+                                <Border Background="{DynamicResource SurfaceLow}" CornerRadius="12" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Margin="0,0,0,25" Padding="20">
+                                    <StackPanel>
+                                        <!-- 1. Hatırlatıcı Göstergesini Göster/Gizle -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lblShowReminderIndicator" Text="{DynamicResource Settings.ShowReminder}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lblShowReminderIndicatorDesc" Text="{DynamicResource Settings.ShowReminderDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                            </StackPanel>
+                                            <CheckBox Grid.Column="1" x:Name="chkHatirlaticiGoster" Style="{StaticResource SwitchStyle}" IsChecked="True" Checked="chkHatirlaticiGoster_Changed" Unchecked="chkHatirlaticiGoster_Changed" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                        <!-- 2. Hatırlatıcıyı Her Zaman Etkinleştir -->
+                                        <Grid Margin="0,0,0,15">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                                <TextBlock x:Name="lblAlwaysEnableReminder" Text="{DynamicResource Settings.ShowReminder.AlwaysEnable}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                <TextBlock x:Name="lblAlwaysEnableReminderDesc" Text="{DynamicResource Settings.ShowReminder.AlwaysEnableDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                            </StackPanel>
+                                            <CheckBox Grid.Column="1" x:Name="chkHatirlaticiHerZaman" Style="{StaticResource SwitchStyle}" IsChecked="False" Checked="chkHatirlaticiHerZaman_Changed" Unchecked="chkHatirlaticiHerZaman_Changed" VerticalAlignment="Center" Margin="10,0,0,0"/>
+                                        </Grid>
+
+                                        <!-- 2.1 Her X dakika kala hatırlat -->
+                                        <Grid Margin="20,0,0,15" x:Name="gridAlwaysEnableReminderMinutes" IsEnabled="{Binding IsChecked, ElementName=chkHatirlaticiHerZaman}">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="Auto"/>
+                                            </Grid.ColumnDefinitions>
+                                            <TextBlock x:Name="lblAlwaysEnableReminderMinutes" Grid.Column="0" Text="{DynamicResource Settings.ShowReminder.Minute}" Foreground="{DynamicResource TextLight}" FontSize="13" VerticalAlignment="Center"/>
+                                            <TextBox Grid.Column="1" x:Name="txtHatirlatmaDk" Text="15" Width="60" Height="28" Background="{DynamicResource SurfaceContainer}" Foreground="{DynamicResource TextLight}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" TextAlignment="Center" VerticalContentAlignment="Center" FontSize="12" Margin="10,0,0,0"/>
+                                        </Grid>
+
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1" Margin="0,0,0,15"/>
+
+                                        <!-- 3. Erteleme Seçenekleri -->
+                                        <TextBlock x:Name="lblSnoozeOptions" Text="{DynamicResource Settings.ShowReminder.SnoozeOptions}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14" Margin="0,0,0,10"/>
+                                        <StackPanel x:Name="pnlErteleme" Orientation="Vertical" Margin="0,0,0,10">
+                                            <!-- Dynamically populated in code-behind -->
+                                        </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
+                                            <Button x:Name="btnErtelemeSecenegiEkle" Content="{DynamicResource Settings.ShowReminder.AddSnooze}" Style="{StaticResource FluentButton}" Click="btnErtelemeSecenegiEkle_Tikla" Height="32" Width="130" HorizontalAlignment="Left" Background="#1AFFFFFF" Foreground="{DynamicResource TextLight}" FontSize="12" Margin="0,0,10,0"/>
+                                            <Button x:Name="btnErtelemeSifirla" Content="{DynamicResource Settings.ShowReminder.ResetSnooze}" Style="{StaticResource FluentButton}" Click="btnErtelemeSifirla_Tikla" Height="32" Width="150" HorizontalAlignment="Left" Background="#1AFFFFFF" Foreground="{DynamicResource TextLight}" FontSize="12"/>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Border>
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Grid>
+
+                    <!-- 3. VIEW: APPEARANCE -->
+                    <Grid x:Name="GorunumSekmesi" Visibility="Collapsed">
+                        <StackPanel MaxWidth="700" HorizontalAlignment="Center" Margin="0,0,0,0">
+                            <TextBlock x:Name="lblAppearanceHeader" Text="{DynamicResource Appearance.Header}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,0,0,4"/>
+                            <TextBlock x:Name="lblAppearanceDesc" Text="{DynamicResource Appearance.Description}" Foreground="{DynamicResource TextMuted}" FontSize="14" Margin="0,0,0,30"/>
+
+                            <Border Background="{DynamicResource SurfaceLow}" CornerRadius="16" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Padding="24">
+                                <StackPanel>
+                                    <Grid Margin="0,0,0,30">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <StackPanel Grid.Column="0" VerticalAlignment="Center">
+                                            <TextBlock x:Name="lblColorMode" Text="{DynamicResource Appearance.Theme}" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource TextLight}"/>
+                                            <TextBlock x:Name="lblColorModeDesc" Text="{DynamicResource Appearance.ThemeDesc}" Foreground="{DynamicResource TextMuted}" FontSize="12" Margin="0,2,0,0"/>
+                                        </StackPanel>
+                                        <!-- Theme Mode Radios -->
+                                        <Border Grid.Column="1" VerticalAlignment="Center" Background="{DynamicResource SurfaceContainer}" CornerRadius="12" Padding="4" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Margin="10,0,0,0">
+                                            <StackPanel Orientation="Horizontal">
+                                                <RadioButton x:Name="rbThemeLight" Style="{StaticResource PivotButton}" Content="😎" Click="TemaAcik_Tikla" Width="70" ToolTip="{DynamicResource Appearance.Theme.Light}"/>
+                                                <RadioButton x:Name="rbThemeSystem" Style="{StaticResource PivotButton}" Content="💻" Click="TemaSistem_Tikla" Width="70" ToolTip="{DynamicResource Appearance.Theme.System}"/>
+                                                <RadioButton x:Name="rbThemeDark" Style="{StaticResource PivotButton}" Content="🌙" IsChecked="True" Click="TemaKoyu_Tikla" Width="70" ToolTip="{DynamicResource Appearance.Theme.Dark}"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </Grid>
+
+                                    <!-- Accents Selection Grid -->
+                                    <TextBlock x:Name="lblThemeAccentColor" Text="{DynamicResource Appearance.ThemeAccentColor}" FontSize="14" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,0,0,15"/>
+                                    <UniformGrid Columns="3" Rows="1">
+                                        <!-- Chronoff Blue -->
+                                        <Button Style="{StaticResource AccentButtonStyle}" Background="#1F0078D4" Click="MaviVurgu_Tikla" Margin="5">
+                                            <StackPanel>
+                                                <Ellipse Width="32" Height="32" Fill="#0078D4" Margin="0,0,0,8"/>
+                                                <TextBlock Text="Chronoff Blue" Foreground="{DynamicResource TextLight}" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <!-- Ocean Teal -->
+                                        <Button Style="{StaticResource AccentButtonStyle}" Background="#1F006687" Click="TurkuazVurgu_Tikla" Margin="5">
+                                            <StackPanel>
+                                                <Ellipse Width="32" Height="32" Fill="#006687" Margin="0,0,0,8"/>
+                                                <TextBlock Text="Ocean Teal" Foreground="{DynamicResource TextLight}" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                        <!-- Autumn Orange -->
+                                        <Button Style="{StaticResource AccentButtonStyle}" Background="#1F974700" Click="TuruncuVurgu_Tikla" Margin="5">
+                                            <StackPanel>
+                                                <Ellipse Width="32" Height="32" Fill="#974700" Margin="0,0,0,8"/>
+                                                <TextBlock Text="Autumn Orange" Foreground="{DynamicResource TextLight}" FontSize="11" FontWeight="Bold" HorizontalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Button>
+                                    </UniformGrid>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- 4. VIEW: ABOUT -->
+                    <Grid x:Name="HakkindaSekmesi" Visibility="Collapsed">
+                        <StackPanel MaxWidth="700" HorizontalAlignment="Center" Margin="0,0,0,0">
+                            <TextBlock x:Name="lblAboutHeader" Text="{DynamicResource About.Header}" FontSize="28" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="0,0,0,4"/>
+                            <TextBlock x:Name="lblAboutDesc" Text="{DynamicResource About.Description}" Foreground="{DynamicResource TextMuted}" FontSize="14" Margin="0,0,0,30"/>
+
+                            <Border Background="{DynamicResource SurfaceLow}" CornerRadius="16" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Padding="35" HorizontalAlignment="Center" Width="550">
+                                <StackPanel HorizontalAlignment="Center">
+                                    <Border Width="140" Height="140" CornerRadius="20" Background="Transparent" Margin="0,0,0,24">
+                                        <Control Template="{StaticResource AppLogoTemplate}" Width="140" Height="140" VerticalAlignment="Center"/>
+                                    </Border>
+                                    <TextBlock Text="Chronoff" FontSize="30" FontWeight="ExtraBold" Foreground="{DynamicResource TextLight}" HorizontalAlignment="Center" Margin="0,0,0,4"/>
+                                    <Border Background="#1A0078D4" CornerRadius="10" Padding="12,4" Margin="0,0,0,20" HorizontalAlignment="Center">
+                                        <TextBlock Text="v1.0" Foreground="{DynamicResource PrimaryBlue}" FontSize="12" FontWeight="Bold"/>
+                                    </Border>
+                                    <TextBlock x:Name="lblAboutAppDesc" Text="{DynamicResource About.AppDescription}" 
+                                               Foreground="{DynamicResource TextMuted}" FontSize="13" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,30"/>
+                                    
+                                    <UniformGrid Columns="2" Width="400">
+                                        <Button x:Name="btnGithub" Content="Github" Height="45" Margin="5" Background="{DynamicResource SurfaceContainer}" Foreground="{DynamicResource TextLight}" BorderThickness="1" BorderBrush="{DynamicResource BorderColor}" Click="BtnGithub_Click">
+                                            <Button.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" Value="8"/>
+                                                </Style>
+                                            </Button.Resources>
+                                        </Button>
+                                        <Button x:Name="btnCheckUpdates" Content="{DynamicResource About.CheckUpdates}" Height="45" Margin="5" Background="{DynamicResource PrimaryBlue}" Foreground="White" FontWeight="Bold" BorderThickness="0" Click="BtnCheckUpdates_Click">
+                                            <Button.Resources>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="CornerRadius" Value="8"/>
+                                                </Style>
+                                            </Button.Resources>
+                                        </Button>
+                                    </UniformGrid>
+                                </StackPanel>
+                            </Border>
+                        </StackPanel>
+                    </Grid>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+</Window>
+
