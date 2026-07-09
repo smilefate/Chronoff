@@ -9,7 +9,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/github/v/release/smilefate/Chronoff?style=for-the-badge&logo=github&color=brightgreen" alt="GitHub Release">
+  <a href="https://github.com/smilefate/Chronoff/releases">
+    <img src="https://img.shields.io/github/v/release/smilefate/Chronoff?style=for-the-badge&logo=github&color=brightgreen" alt="GitHub Release">
+  </a>
   <img src="https://img.shields.io/badge/.NET-10.0-blueviolet?style=for-the-badge&logo=.net" alt=".NET 10.0">
   <img src="https://img.shields.io/badge/Platform-Windows-0078D4?style=for-the-badge&logo=windows" alt="Platform Windows">
   <img src="https://img.shields.io/badge/UI_Framework-WPF-blue?style=for-the-badge" alt="WPF">
