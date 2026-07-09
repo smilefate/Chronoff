@@ -788,9 +788,22 @@ namespace Chronoff
 
             if (hedefSaniye <= 0) return;
 
-            if (_hatirlaticiAktif && int.TryParse(PopupDkGir.Text, out int popDk))
+            if (chkHatirlaticiHerZaman?.IsChecked == true)
             {
-                _uyariDakikasi = popDk;
+                _hatirlaticiAktif = true;
+                _uyariDakikasi = int.TryParse(txtHatirlatmaDk?.Text, out int defDk) ? defDk : 15;
+            }
+            else
+            {
+                _hatirlaticiAktif = HatirlaticiToggle?.IsChecked ?? false;
+                if (_hatirlaticiAktif && int.TryParse(PopupDkGir?.Text, out int popDk))
+                {
+                    _uyariDakikasi = popDk;
+                }
+            }
+
+            if (_hatirlaticiAktif)
+            {
                 if (_uyariDakikasi * 60 >= hedefSaniye)
                 {
                     DilServisi.Mesaj(
