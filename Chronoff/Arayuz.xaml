@@ -551,7 +551,7 @@
                     <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="24,0">
                         <Control Template="{StaticResource AppLogoTemplate}" Width="24" Height="24" VerticalAlignment="Center"/>
                         <TextBlock Text="Chronoff" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="8,0,0,0" VerticalAlignment="Center"/>
-                        <TextBlock Text="v1.0" FontSize="11" Foreground="{DynamicResource TextMuted}" Margin="8,2,0,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="v1.1" FontSize="11" Foreground="{DynamicResource TextMuted}" Margin="8,2,0,0" VerticalAlignment="Center"/>
                     </StackPanel>
 
                     <!-- Main Top Tabs -->
@@ -1180,7 +1180,7 @@
                                     </Border>
                                     <TextBlock Text="Chronoff" FontSize="30" FontWeight="ExtraBold" Foreground="{DynamicResource TextLight}" HorizontalAlignment="Center" Margin="0,0,0,4"/>
                                     <Border Background="#1A0078D4" CornerRadius="10" Padding="12,4" Margin="0,0,0,20" HorizontalAlignment="Center">
-                                        <TextBlock Text="v1.0" Foreground="{DynamicResource PrimaryBlue}" FontSize="12" FontWeight="Bold"/>
+                                        <TextBlock Text="v1.1" Foreground="{DynamicResource PrimaryBlue}" FontSize="12" FontWeight="Bold"/>
                                     </Border>
                                     <TextBlock x:Name="lblAboutAppDesc" Text="{DynamicResource About.AppDescription}" 
                                                Foreground="{DynamicResource TextMuted}" FontSize="13" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,30"/>
