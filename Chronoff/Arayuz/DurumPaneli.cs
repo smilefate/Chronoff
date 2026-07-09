@@ -164,6 +164,20 @@ namespace Chronoff
             int kalansure = arayuz._kalansure;
             int uyariDakikasi = arayuz._uyariDakikasi;
             bool hatirlaticiAktif = arayuz._hatirlaticiAktif;
+
+            if (!sayacAktif)
+            {
+                if (arayuz.chkHatirlaticiHerZaman?.IsChecked == true)
+                {
+                    hatirlaticiAktif = true;
+                    uyariDakikasi = int.TryParse(arayuz.txtHatirlatmaDk?.Text, out int defDk) ? defDk : 15;
+                }
+                else
+                {
+                    hatirlaticiAktif = arayuz.HatirlaticiToggle?.IsChecked == true;
+                    uyariDakikasi = int.TryParse(arayuz.PopupDkGir?.Text, out int popDk) ? popDk : 15;
+                }
+            }
             bool? hatirlaticiHerZaman = arayuz.chkHatirlaticiHerZaman?.IsChecked;
             bool? onIkiSaat = arayuz.chkOnIkiSaat?.IsChecked;
             object? aktifDil = DilServisi.AktifDil;
