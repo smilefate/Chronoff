@@ -135,7 +135,10 @@ namespace Chronoff
         {
             if (arayuz.ReminderBarBorder != null)
             {
-                var hedefGorunurluk = arayuz.chkHatirlaticiGoster?.IsChecked is true ? Visibility.Visible : Visibility.Collapsed;
+                var hedefGorunurluk = (arayuz.chkHatirlaticiGoster?.IsChecked is true && arayuz.chkHatirlaticiHerZaman?.IsChecked is not true)
+                    ? Visibility.Visible
+                    : Visibility.Collapsed;
+
                 if (arayuz.ReminderBarBorder.Visibility != hedefGorunurluk)
                 {
                     arayuz.ReminderBarBorder.Visibility = hedefGorunurluk;
@@ -491,9 +494,8 @@ namespace Chronoff
                 int farkSaniye = kalansure - (uyariDakikasi * 60);
                 if (farkSaniye > 0)
                 {
-                    int kalanDakikaBilgi = (farkSaniye + 59) / 60;
-                    string hatirlaticiMetni = DilServisi.AktifDil.GetValueOrDefault("Status.ReminderWillShow", "Hatırlatıcı {0} dakika sonra gösterilecek");
-                    MetniDegistir(arayuz.DurumHatirlaticiMetni, string.Format(hatirlaticiMetni, kalanDakikaBilgi));
+                    string planlananHatirlaticiMetni = DilServisi.AktifDil.GetValueOrDefault("Status.ReminderScheduled", "Hatırlatıcı {0} dakika kala gösterilecek");
+                    MetniDegistir(arayuz.DurumHatirlaticiMetni, string.Format(planlananHatirlaticiMetni, uyariDakikasi));
                 }
                 else
                 {
