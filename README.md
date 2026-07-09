@@ -64,10 +64,10 @@ Unlike traditional shutdown timer utilities, Chronoff provides:
 - Lightweight architecture
 - Open-source MIT license
 
-## Screenshots
-| Light Mode | Dark Mode |
-| :---: | :---: |
-| *[Placeholder: Add Light Mode Screenshot]* | *[Placeholder: Add Dark Mode Screenshot]* |
+## Preview / Demo
+<p align="center">
+  <img src="assets/Chronoff_ENG.gif" alt="Chronoff English Version Preview" width="800">
+</p>
 
 ## Key Features
 * **Precise Control:** Schedule tasks via specific date/time, countdown, or recurring intervals.
@@ -260,10 +260,10 @@ Geleneksel kapatma zamanlayıcılarının aksine Chronoff şunları sağlar:
 - Hafif mimari
 - Açık kaynak MIT lisansı
 
-## Ekran Görüntüleri
-| Açık Tema | Koyu Tema |
-| :---: | :---: |
-| *[Açık Tema Ekran Görüntüsü Ekleyin]* | *[Koyu Tema Ekran Görüntüsü Ekleyin]* |
+## Önizleme / Demo
+<p align="center">
+  <img src="assets/Chronoff_TR.gif" alt="Chronoff Türkçe Sürüm Önizlemesi" width="800">
+</p>
 
 ## Temel Özellikler
 * **Hassas Zaman Yönetimi:** Eylemleri belirli tarih/saatte, geri sayım sayacıyla veya tekrarlayan aralıklarla planlayın.
