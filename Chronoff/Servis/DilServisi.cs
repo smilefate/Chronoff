@@ -49,16 +49,13 @@ namespace Chronoff.Servis
                         string dosyaAdi = kaynak.Substring(resourcePrefix.Length);
                         string hedefYol = Path.Combine(hedefKlasor, dosyaAdi);
 
-                        if (!File.Exists(hedefYol) || new FileInfo(hedefYol).Length == 0)
+                        using (Stream? stream = assembly.GetManifestResourceStream(kaynak))
                         {
-                            using (Stream? stream = assembly.GetManifestResourceStream(kaynak))
+                            if (stream != null)
                             {
-                                if (stream != null)
+                                using (FileStream fileStream = new FileStream(hedefYol, FileMode.Create, FileAccess.Write))
                                 {
-                                    using (FileStream fileStream = new FileStream(hedefYol, FileMode.Create, FileAccess.Write))
-                                    {
-                                        stream.CopyTo(fileStream);
-                                    }
+                                    stream.CopyTo(fileStream);
                                 }
                             }
                         }
