@@ -1,3 +1,4 @@
 <Solution>
+  <Project Path="Chronoff.Tests/Chronoff.Tests.csproj" />
   <Project Path="Chronoff/Chronoff.csproj" />
 </Solution>

@@ -223,6 +223,12 @@ namespace Chronoff
                 chkArkaPlandaCalis.Unchecked += (s, e) => AyarlariKaydet();
             }
 
+            if (chkBaslatildigindaKucult != null)
+            {
+                chkBaslatildigindaKucult.Checked += (s, e) => AyarlariKaydet();
+                chkBaslatildigindaKucult.Unchecked += (s, e) => AyarlariKaydet();
+            }
+
             if (chkParolaEtkin != null)
             {
                 chkParolaEtkin.Checked += (s, e) => { if (_ayarlarYuklendi) AyarlariKaydet(); };
@@ -263,6 +269,7 @@ namespace Chronoff
                 }
 
                 DurumPaneliniGuncelle();
+                if (_ayarlarYuklendi) AyarlariKaydet();
             }
         }
 
@@ -709,28 +716,22 @@ namespace Chronoff
                         TarihiDegistir(sonuc.GunDegisimi);
                     }
 
-                    if (tag.Contains("Saat"))
+                    if (onIkiSaatModu)
                     {
-                        if (onIkiSaatModu)
-                        {
-                            txtHedefSaat.Text = sonuc.YeniSaat.ToString("D2");
-                            if (btnAmPm != null) btnAmPm.Content = sonuc.YeniAmPm;
-                        }
-                        else
-                        {
-                            txtHedefSaat.Text = sonuc.YeniSaat.ToString("D2");
-                        }
+                        txtHedefSaat.Text = sonuc.YeniSaat.ToString("D2");
+                        if (btnAmPm != null) btnAmPm.Content = sonuc.YeniAmPm;
                     }
                     else
                     {
-                        txtHedefDakika.Text = sonuc.YeniDakika.ToString("D2");
+                        txtHedefSaat.Text = sonuc.YeniSaat.ToString("D2");
                     }
+                    txtHedefDakika.Text = sonuc.YeniDakika.ToString("D2");
                 }
             }
         }
 
         /// <summary>TR: Zamanlayıcıyı başlatır. EN: Starts the timer.</summary>
-        public void Baslat_Tikla(object? sender, RoutedEventArgs e)
+        public async void Baslat_Tikla(object? sender, RoutedEventArgs e)
         {
             int hedefSaniye = 0;
 
@@ -739,6 +740,13 @@ namespace Chronoff
                 if (int.TryParse(SaatGir.Text, out int saat) && int.TryParse(DakikaGir.Text, out int dakika))
                 {
                     hedefSaniye = (saat * 3600) + (dakika * 60);
+                }
+
+                if (hedefSaniye <= 0)
+                {
+                    hedefSaniye = 60;
+                    SaatGir.Text = "00";
+                    DakikaGir.Text = "01";
                 }
             }
             else if (_aktifSekmeIndex == 0)
@@ -831,7 +839,16 @@ namespace Chronoff
                 }
             }
             GuncelleBaslangictaCalistirDurumu();
-            if (_ayarlarYuklendi) AyarlariKaydet();
+            if (_ayarlarYuklendi) await AyarlariKaydetAsync();
+
+            if (chkBaslatildigindaKucult?.IsChecked == true)
+            {
+                this.Hide();
+                BildirimMerkezi.Instance.Visible = true;
+                string baslik = DilServisi.AktifDil.GetValueOrDefault("SysTray.BalloonTitle", "Chronoff Çalışıyor");
+                string mesaj = DilServisi.AktifDil.GetValueOrDefault("SysTray.BalloonText", "Uygulama arka planda çalışmaya devam ediyor.");
+                BildirimMerkezi.Instance.ShowBalloonTip(3000, baslik, mesaj, System.Windows.Forms.ToolTipIcon.Info);
+            }
         }
 
         private void ArayuzDurumunuAyarla(bool durum)
@@ -1043,6 +1060,7 @@ namespace Chronoff
                     DateFormat = _tarihFormati,
                     RunAtStartup = _baslangictaCalistirTercihi,
                     RunInBackground = chkArkaPlandaCalis.IsChecked == true,
+                    MinimizeOnStart = chkBaslatildigindaKucult.IsChecked == true,
                     CountdownHourText = SaatGir?.Text ?? "00",
                     CountdownMinuteText = DakikaGir?.Text ?? "30",
                     ReminderMinutes = PopupDkGir?.Text ?? "15",
@@ -1122,6 +1140,7 @@ namespace Chronoff
                     WindowsBaslangiciniAyarla(false);
 
                     chkArkaPlandaCalis.IsChecked = true;
+                    chkBaslatildigindaKucult.IsChecked = true;
 
                     chkButonGoster.IsChecked = true;
                     chkButonTarihSaat.IsChecked = true;
@@ -1140,6 +1159,11 @@ namespace Chronoff
                         new ErtelemeSecenegiOgesi { Value = 30, Unit = "Dakika" }
                     };
                     ErtelemeListesi();
+
+                    _secilenGorev = SistemGorevi.Kapat;
+                    rbGorevKapat.IsChecked = true;
+                    rbGorevYenidenBaslat.IsChecked = false;
+                    EylemBasligi.Text = SistemEylemiAdiniAl();
 
                     GuncelleButonGosterimleri();
                     ZamanMetinleri();
@@ -1222,6 +1246,7 @@ namespace Chronoff
                 txtSaatArtis.Text = ayarlar.HourIncrementAmount.ToString();
                 txtDakikaArtis.Text = ayarlar.MinuteIncrementAmount.ToString();
                 chkArkaPlandaCalis.IsChecked = ayarlar.RunInBackground;
+                chkBaslatildigindaKucult.IsChecked = ayarlar.MinimizeOnStart;
 
                 _ayarlarYukleniyor = true;
 

@@ -234,16 +234,73 @@ namespace Chronoff
             }
             else
             {
+                int mevcutSaat24 = mevcutSaat;
+                if (onIkiSaatModu)
+                {
+                    mevcutSaat24 = DurumPaneli.Convert12To24(mevcutSaat, amPm);
+                }
+
                 if (azaltmaModu)
                 {
-                    yeniDakika = (mevcutDakika - dakikaArtisi < 0)
-                        ? 60 + ((mevcutDakika - dakikaArtisi) % 60)
-                        : mevcutDakika - dakikaArtisi;
-                    if (yeniDakika < 0) yeniDakika = 0;
+                    int fark = mevcutDakika - dakikaArtisi;
+                    int saatEksilmesi = 0;
+                    if (fark < 0)
+                    {
+                        saatEksilmesi = (Math.Abs(fark) + 59) / 60;
+                        yeniDakika = (60 - (Math.Abs(fark) % 60)) % 60;
+                    }
+                    else
+                    {
+                        yeniDakika = fark;
+                    }
+
+                    if (saatEksilmesi > 0)
+                    {
+                        if (aktifSekmeIndex == 0 && mevcutSaat24 - saatEksilmesi < 0)
+                        {
+                            try
+                            {
+                                int gunEksilmesi = (Math.Abs(mevcutSaat24 - saatEksilmesi) + 23) / 24;
+                                DateTime mevcutTarih = new DateTime(yil, ay, gun);
+                                if (mevcutTarih.AddDays(-gunEksilmesi) >= DateTime.Today)
+                                {
+                                    gunDegisimi = -gunEksilmesi;
+                                }
+                            }
+                            catch { }
+                        }
+
+                        mevcutSaat24 = (mevcutSaat24 - saatEksilmesi < 0)
+                            ? (24 - (Math.Abs(mevcutSaat24 - saatEksilmesi) % 24)) % 24
+                            : mevcutSaat24 - saatEksilmesi;
+                        if (mevcutSaat24 < 0) mevcutSaat24 = 0;
+                    }
                 }
                 else
                 {
-                    yeniDakika = (mevcutDakika + dakikaArtisi) % 60;
+                    int toplamDakika = mevcutDakika + dakikaArtisi;
+                    int saatArtisiDakikadan = toplamDakika / 60;
+                    yeniDakika = toplamDakika % 60;
+
+                    if (saatArtisiDakikadan > 0)
+                    {
+                        if (aktifSekmeIndex == 0 && mevcutSaat24 + saatArtisiDakikadan >= 24)
+                        {
+                            gunDegisimi = (mevcutSaat24 + saatArtisiDakikadan) / 24;
+                        }
+                        mevcutSaat24 = (mevcutSaat24 + saatArtisiDakikadan) % 24;
+                    }
+                }
+
+                if (onIkiSaatModu)
+                {
+                    var (h12, newAmPm) = DurumPaneli.Convert24To12(mevcutSaat24);
+                    yeniSaat = h12;
+                    yeniAmPm = newAmPm;
+                }
+                else
+                {
+                    yeniSaat = mevcutSaat24;
                 }
             }
 

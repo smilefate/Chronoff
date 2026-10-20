@@ -25,6 +25,7 @@ namespace Chronoff.Servis
         // --- Davranış Ayarları ---
         public bool RunAtStartup { get; set; } = false;
         public bool RunInBackground { get; set; } = true;
+        public bool MinimizeOnStart { get; set; } = true;
 
         // --- Sayaç Ayarları ---
         public string CountdownHourText { get; set; } = "00";

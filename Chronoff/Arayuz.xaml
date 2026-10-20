@@ -551,7 +551,7 @@
                     <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="24,0">
                         <Control Template="{StaticResource AppLogoTemplate}" Width="24" Height="24" VerticalAlignment="Center"/>
                         <TextBlock Text="Chronoff" FontSize="16" FontWeight="Bold" Foreground="{DynamicResource TextLight}" Margin="8,0,0,0" VerticalAlignment="Center"/>
-                        <TextBlock Text="v1.1" FontSize="11" Foreground="{DynamicResource TextMuted}" Margin="8,2,0,0" VerticalAlignment="Center"/>
+                        <TextBlock Text="v1.2" FontSize="11" Foreground="{DynamicResource TextMuted}" Margin="8,2,0,0" VerticalAlignment="Center"/>
                     </StackPanel>
 
                     <!-- Main Top Tabs -->
@@ -592,13 +592,13 @@
  
                         <!-- GorevPaneli -->
                         <StackPanel Grid.Row="1" x:Name="GorevPaneli">
-                            <RadioButton x:Name="rbGorevKapat" Style="{StaticResource SidebarActionButton}" Tag="kapat" Checked="GorevSecimi">
+                            <RadioButton x:Name="rbGorevKapat" Style="{StaticResource SidebarActionButton}" Tag="kapat" IsChecked="True" Checked="GorevSecimi">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="⏻" FontSize="16" Margin="0,0,12,0" VerticalAlignment="Center"/>
                                     <TextBlock x:Name="txtGorevKapat" Text="{DynamicResource Sidebar.Shutdown}" VerticalAlignment="Center"/>
                                 </StackPanel>
                             </RadioButton>
-                            <RadioButton x:Name="rbGorevYenidenBaslat" Style="{StaticResource SidebarActionButton}" Tag="yenidenbaslat" IsChecked="True" Checked="GorevSecimi">
+                            <RadioButton x:Name="rbGorevYenidenBaslat" Style="{StaticResource SidebarActionButton}" Tag="yenidenbaslat" Checked="GorevSecimi">
                                 <StackPanel Orientation="Horizontal">
                                     <TextBlock Text="↻" FontSize="16" Margin="0,0,12,0" VerticalAlignment="Center"/>
                                     <TextBlock x:Name="txtGorevYenidenBaslat" Text="{DynamicResource Sidebar.Restart}" VerticalAlignment="Center"/>
@@ -958,6 +958,16 @@
                                                  <CheckBox x:Name="chkArkaPlandaCalis" Style="{StaticResource SwitchStyle}" IsChecked="True" HorizontalAlignment="Right" VerticalAlignment="Center"/>
                                             </Grid>
                                         </Border>
+                                        <Separator Background="{DynamicResource BorderColor}" Height="1"/>
+                                        <Border Padding="20">
+                                            <Grid>
+                                                <StackPanel>
+                                                    <TextBlock x:Name="lblMinimizeOnStart" Text="{DynamicResource Settings.MinimizeOnStart}" FontWeight="Bold" Foreground="{DynamicResource TextLight}" FontSize="14"/>
+                                                    <TextBlock x:Name="lblMinimizeOnStartDesc" Text="{DynamicResource Settings.MinimizeOnStartDesc}" Foreground="{DynamicResource TextMuted}" FontSize="11"/>
+                                                </StackPanel>
+                                                 <CheckBox x:Name="chkBaslatildigindaKucult" Style="{StaticResource SwitchStyle}" IsChecked="True" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                            </Grid>
+                                        </Border>
                                     </StackPanel>
                                 </Border>
  
@@ -1180,7 +1190,7 @@
                                     </Border>
                                     <TextBlock Text="Chronoff" FontSize="30" FontWeight="ExtraBold" Foreground="{DynamicResource TextLight}" HorizontalAlignment="Center" Margin="0,0,0,4"/>
                                     <Border Background="#1A0078D4" CornerRadius="10" Padding="12,4" Margin="0,0,0,20" HorizontalAlignment="Center">
-                                        <TextBlock Text="v1.1" Foreground="{DynamicResource PrimaryBlue}" FontSize="12" FontWeight="Bold"/>
+                                        <TextBlock Text="v1.2" Foreground="{DynamicResource PrimaryBlue}" FontSize="12" FontWeight="Bold"/>
                                     </Border>
                                     <TextBlock x:Name="lblAboutAppDesc" Text="{DynamicResource About.AppDescription}" 
                                                Foreground="{DynamicResource TextMuted}" FontSize="13" TextAlignment="Center" TextWrapping="Wrap" Margin="0,0,0,30"/>
